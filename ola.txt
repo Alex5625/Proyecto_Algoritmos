@@ -1,0 +1,1000 @@
+    2  ./lab4
+    3  g++ -o lab4 Ahernandez_Lab4.cpp 
+    4  clear
+    5  g++ -o lab4 Ahernandez_Lab4.cpp 
+    6  clear
+    7  ./lab4
+    8  g++ -o lab4 Ahernandez_Lab4.cpp 
+    9  ./lab4
+   10  g++ -o lab4 Ahernandez_Lab4.cpp 
+   11  ./lab4
+   12  g++ -o lab4 Ahernandez_Lab4.cpp 
+   13  ./lab4
+   14  ls
+   15  ./lab4
+   16  g++ -o lab4_prueba Ahernandez_Lab4.cpp 
+   17  clear
+   18  g++ -o lab4_prueba Ahernandez_Lab4.cpp 
+   19  g++ -o lab4_prueba prueba_lab4.cpp 
+   20  ./lab4_prueba 
+   21  g++ -o lab4_prueba prueba_lab4.cpp 
+   22  ./lab4_prueba 
+   23  g++ -o lab4_prueba prueba_lab4.cpp 
+   24  g++ -o lab4 Ahernandez_Lab4.cpp 
+   25  clear
+   26  g++ -o lab4 Ahernandez_Lab4.cpp 
+   27  clear
+   28  g++ -o lab4 Ahernandez_Lab4.cpp 
+   29  clear
+   30  g++ -o lab4 Ahernandez_Lab4.cpp 
+   31  g++ -o lab4_prueba prueba_lab4.cpp 
+   32  ./lab4_prueba 
+   33  g++ -o lab4_prueba prueba_lab4.cpp 
+   34  ./lab4_prueba 
+   35  g++ -o lab4_prueba prueba_lab4.cpp 
+   36  ./lab4_prueba 
+   37  g++ -o lab4_prueba prueba_lab4.cpp 
+   38  ./lab4_prueba 
+   39  g++ -o lab4_prueba prueba_lab4.cpp 
+   40  ./lab4_prueba 
+   41  g++ -o lab4_prueba prueba_lab4.cpp 
+   42  ./lab4_prueba 
+   43  git status
+   44  clear
+   45  git status
+   46  git add AHernandez_Lab4.cpp 
+   47  git status
+   48  git commit -m "Se añade laboratorio 4 para su revision"
+   49  git pushorigin laboratorio4
+   50  git push origin laboratorio4
+   51  git rm calculocuadrado.cpp 
+   52  git rm holamundo.cpp 
+   53  git rm laboratorio_0.cpp 
+   54  git status
+   55  git commit -m "Se eliminan archivos que son de otra rama"
+   56  git push origin laboratorio4
+   57  g++ -o -Wall lab4 prueba_lab4.cpp
+   58  g++ -o lab4 prueba_lab4.cpp
+   59  ./lab4
+   60  g++ -o lab4 prueba_lab4.cpp
+   61  ./lab4
+   62  git status
+   63  git checkout -b laboratorio4 main
+   64  git status
+   65  git add AHernandez_Lab4.cpp 
+   66  git status
+   67  ./lab4
+   68  g++ -o lab4 AHernandez_Lab4.cpp 
+   69  ./lab4
+   70  g++ -o lab4 AHernandez_Lab4.cpp 
+   71  ./lab4
+   72  git add AHernandez_Lab4.cpp 
+   73  git commit -m "se soluciona problema de control de errores"
+   74  git push origin laboratorio4
+   75  ./lab4
+   76  ./ej4
+   77  ./lab4
+   78  g++ -o AVL AVL.cpp
+   79  ./AVL
+   80  g++ -o avl_tree avl_tree.cpp
+   81  dot -Tpng avl_insertion.dot -o avl_insertion.png
+   82  eog avl_insertion.png 
+   83  ls
+   84  dot -Tpng avl_deletion.dot -o avl_deletion.png
+   85  eog avl_deletion.png 
+   86  g++ -o avl_tree avl_tree.cpp
+   87  g++ -o AVL AVL.cpp
+   88  ./AVL
+   89  g++ -o lab5 Ahernadez_Lab5.cpp 
+   90  ls
+   91  g++ -o lab5 Ahernadez_Lab5.cpp 
+   92  g++ -o lab5 AhernandezLab5.cpp 
+   93  ./lab5
+   94  git checkout -b laboratorio5 main
+   95  git status
+   96  git add AhernandezLab5.cpp 
+   97  git status
+   98  git commit -m "se añade el archivo con algunos comentarios"
+   99  git push origin laboratorio5
+  100  g++ -o AVL AVL.cpp
+  101  ./AVL
+  102  g++ -o AVL AVL.cpp
+  103  ./AVL
+  104  g++ -o AVL AVL.cpp
+  105  ./AVL
+  106  g++ -o lab5 AhernandezLab5.cpp 
+  107  ./lab5
+  108  g++ -o lab5 AhernandezLab5.cpp 
+  109  ./lab5
+  110  g++ -o lab5 AhernandezLab5.cpp 
+  111  ./lab5
+  112  g++ -o lab5 AhernandezLab5.cpp 
+  113  clear
+  114  g++ -o lab5 AhernandezLab5.cpp 
+  115  ./lab5
+  116  g++ -o lab5 AhernandezLab5.cpp 
+  117  ./lab5
+  118  g++ -o lab5 AhernandezLab5.cpp 
+  119  ./lab5
+  120  g++ -o lab5 AhernandezLab5.cpp 
+  121  ./lab5
+  122  g++ -o lab5 AhernandezLab5.cpp 
+  123  ./lab5
+  124  git status
+  125  git add AhernandezLab5.cpp 
+  126  git commit -m "Se actualiza codigo implementando eliminar nodo con su respectiva equilibracion"
+  127  git push origin laboratorio5
+  128  g++ -o lab5 AhernandezLab5.cpp 
+  129  ./lab5
+  130  g++ -o lab5 AhernandezLab5.cpp 
+  131  ./lab5
+  132  g++ -o lab5 AhernandezLab5.cpp 
+  133  ./lab5
+  134  g++ -o lab5 AhernandezLab5.cpp 
+  135  ./lab5
+  136  g++ -o lab5 AhernandezLab5.cpp 
+  137  ./lab5
+  138  g++ -o lab5 AhernandezLab5.cpp 
+  139  ./lab5
+  140  g++ -o lab5 AhernandezLab5.cpp 
+  141  ./lab5
+  142  g++ -o lab5 AhernandezLab5.cpp 
+  143  ./lab5
+  144  g++ -o lab5 AhernandezLab5.cpp 
+  145  ./lab5
+  146  g++ -o lab5 AhernandezLab5.cpp 
+  147  ./lab5
+  148  g++ -o lab5 AhernandezLab5.cpp 
+  149  ./lab5
+  150  g++ -o lab5 AhernandezLab5.cpp 
+  151  ./lab5
+  152  git status
+  153  git add AhernandezLab5.cpp 
+  154  git remove calculocuadrado.cpp holamundo.cpp laboratorio_0.cpp
+  155  git rm calculocuadrado.cpp holamundo.cpp laboratorio_0.cpp
+  156  git status
+  157  git commit -m "se agrega funcion modificar"
+  158  git push origin laboratorio5
+  159  git status
+  160  git add AhernandezLab5.cpp 
+  161  git commit -m "se elimina codigo que no se usa"
+  162  git push origin laboratorio5
+  163  sudo dnf install lutris 
+  164  eboot 
+  165  reboot
+  166  gcc -o dijstrka dijkstra.c 
+  167  ./dijstrka 
+  168  clear
+  169  g++ -o dijkstra dijkstra.cpp
+  170  clear
+  171  g++ -o dijkstra dijkstra.cpp
+  172  clear
+  173  g++ -o dijkstra dijkstra.cpp
+  174  ./dijkstra
+  175  g++ -o dijkstra dijkstra.cpp
+  176  ./dijkstra
+  177  g++ -o dijkstra dijkstra.cpp
+  178  g++ -o burbuja manejo_arreglo.cpp 
+  179  ./burbuja 
+  180  ls
+  181  ssh bioinfo1@genoma.med.uchile.cl
+  182  ls
+  183  g++ -o labnacho laboratorio_6.cpp 
+  184  ./labnacho 
+  185  ls -l
+  186  g++ -o dijkstra dijkstra.cpp
+  187  g++ -o lab6alexis lab6AlexisHernandez.cpp
+  188  ./lab6alexis 
+  189  ./lab6alexis 5
+  190  g++ -o lab6alexis lab6AlexisHernandez.cpp
+  191  ./lab6alexis 5
+  192  g++ -o lab6alexis lab6AlexisHernandez.cpp
+  193  ./lab6alexis 
+  194  ./lab6alexis 3
+  195  ./lab6alexis 2
+  196  git status
+  197  git add lab6AlexisHernandez.cpp 
+  198  git commit -m "se arregla error con el ingreso de consola y se comenta archivo"
+  199  git push origin laboratorio6
+  200  ./dijkstra 5
+  201  ./labnacho 5
+  202  ./dijkstra 5
+  203  5
+  204  ./dijkstra 5
+  205  ./dijkstra 3
+  206  ./dijkstra 5
+  207  g++ -o dijkstra dijkstra.cpp
+  208  ./dijkstra 5
+  209  g++ -o dijkstra dijkstra.cpp
+  210  ./dijkstra 5
+  211  g++ -o dijkstra dijkstra.cpp
+  212  ./dijkstra 5
+  213  ./labnacho 5
+  214  g++ -o labnacho laboratorio_6.cpp 
+  215  ./labnacho 
+  216  ./labnacho 5
+  217  ./dijkstra 1
+  218  ./dijkstra 2
+  219  g++ -o dijkstra dijkstra.cpp
+  220  ./dijkstra 2
+  221  ./dijkstra 1
+  222  g++ -o dijkstra dijkstra.cpp
+  223  ./dijkstra 1
+  224  g++ -o dijkstra dijkstra.cpp
+  225  ./dijkstra 1
+  226  ./dijkstra 2
+  227  git checkout -help
+  228  git checkout -b laboratorio6 main 
+  229  git status
+  230  cp dijkstra.cpp lab6AlexisHernandez.cpp
+  231  ls
+  232  git add lab6AlexisHernandez.cpp 
+  233  git commit -m "se añade archivo del algoritmo dijkstra"
+  234  git push origin laboratorio6
+  235  cd ..
+  236  git status
+  237  git rm calculocuadrado.cpp holamundo.cpp laboratorio_0.cpp 
+  238  git commit 
+  239  git commit #
+  240  git commit -m "se eliminan archivos que no corresponden" 
+  241  git push origin laboratorio6
+  242  g++ -o dijkstra dijkstra.cpp
+  243  ls
+  244  cd matriz/
+  245  g++ -o dijkstra dijkstra.cpp
+  246  ./dijkstra 1
+  247  ./dijkstra 5
+  248  g++ -o dijkstra dijkstra.cpp
+  249  ./dijkstra 1
+  250  ./dijkstra 4
+  251  g++ -o dijkstra dijkstra.cpp
+  252  ./dijkstra 4
+  253  g++ -o dijkstra dijkstra.cpp
+  254  ./dijkstra 
+  255  cd /run/media/alex/DATA/A…A224_2023430003/matriz
+  256  cd /run/media/alex/DATA/Algoritmo\ y\ Estructura\ de\ Datos/
+  257  cd 3430A224_2023430003/matriz/
+  258  ls
+  259  ./dijkstra
+  260  ls
+  261  g++ -o matriz ejemplo_matriz.cpp 
+  262  ./matriz
+  263  g++ -o matriz ejemplo_matriz.cpp 
+  264  ./matriz
+  265  g++ -o ejemplo ejemplo.cpp 
+  266  ls
+  267  ./ejemplo
+  268  ./matriz 3
+  269  ./matriz 2
+  270  ./matriz 1
+  271  ./matriz 
+  272  ./matriz 0.1
+  273  ./matriz -1
+  274  ./matriz -0
+  275  ./matriz -6
+  276  ./matriz -1
+  277  ls -l
+  278  ./dijkstra
+  279  g++ -o lab6alexis Lab6_Alexis.cpp 
+  280  g++ -o dijkstra dijkstra.cpp
+  281  clear
+  282  g++ -o dijkstra dijkstra.cpp
+  283  clear
+  284  g++ -o labnacho laboratorio_6.cpp 
+  285  ./labnacho
+  286  g++ -o -Wall labnacho laboratorio_6.cpp 
+  287  g++ -Wall -o labnacho laboratorio_6.cpp 
+  288  ./labnacho
+  289  g++ -o dijkstra dijkstra.cpp
+  290  clear
+  291  g++ -o dijkstra dijkstra.cpp
+  292  cleaclear
+  293  clear
+  294  g++ -o dijkstra dijkstra.cpp
+  295  clear
+  296  g++ -o dijkstra dijkstra.cpp
+  297  clear
+  298  g++ -o dijkstra dijkstra.cpp
+  299  clear
+  300  g++ -o dijkstra dijkstra.cpp
+  301  clear
+  302  g++ -o dijkstra dijkstra.cpp
+  303  clear
+  304  g++ -o dijkstra dijkstra.cpp
+  305  clear
+  306  g++ -o dijkstra dijkstra.cpp
+  307  clear
+  308  g++ -o dijkstra dijkstra.cpp
+  309  clear
+  310  g++ -o dijkstra dijkstra.cpp
+  311  clear
+  312  g++ -o dijkstra dijkstra.cpp
+  313  clear
+  314  g++ -o dijkstra dijkstra.cpp
+  315  ./dijkstra
+  316  ./dijkstra 2
+  317  g++ -o dijkstra dijkstra.cpp
+  318  ./dijkstra 2
+  319  ./labnacho
+  320  ./labnacho 2
+  321  ./dijkstra 4
+  322  0
+  323  ./dijkstra 4
+  324  ./dijkstra 3
+  325  g++ -o dijkstra dijkstra.cpp
+  326  g++ -o shelsort shell.cpp 
+  327  ./shelsort 
+  328  ./lab7 3
+  329  ./lab7 6
+  330  man g++
+  331  g++ -W -o lab7 lab7AlexisHernandez.cpp 
+  332  ./lab7
+  333  ./lab7 3
+  334  g++ -W -o lab7 lab7AlexisHernandez.cpp 
+  335  ls
+  336  ./prueba 3
+  337  g++ -W -o lab7 lab7AlexisHernandez.cpp 
+  338  g++ -W -o lab7 prueba 
+  339  g++ -o prueba prueba.cpp
+  340  g++ -o ordenamiento manejo_arreglo.cpp 
+  341  ./prueba
+  342  ./prueba 6
+  343  dot -Tpng -o grafo.png grafo_original.tx
+  344  g++ -o prueba prueba.cpp
+  345  ./prueba 7
+  346  ./prueba 6
+  347  g++ -o prueba prueba.cpp
+  348  ./prueba 6
+  349  git checkout --h
+  350  git checkout laboratorio7 main
+  351  git checkout main laboratorio7
+  352  git checkout -B laboratorio7 main
+  353  git status
+  354  ls
+  355  git add Lab7AlexisHernandez.cpp 
+  356  git commit -m "se añade algoritmo de prim"
+  357  git push origin laboratorio7
+  358  git -help
+  359  git rm calculocuadrado.cpp
+  360  cd ..
+  361  git rm calculocuadrado.cpp holamundo.cpp laboratorio_0.cpp 
+  362  git commit -m "se eliminan archivos que no son del laboratorio"
+  363  git push origin laboratorio7
+  364  cd algoritmo_prim/
+  365  git add Lab7AlexisHernandez.cpp 
+  366  git commit -m "se actualiza los comentarios del algoritmo"
+  367  git push origin laboratorio7
+  368  cd ..
+  369  cd clases/
+  370  ls
+  371  mv --help
+  372  mv lab8alexisHernandez.cpp /run/media/alex/DATA/Algoritmo y Estructura de Datos/clases /run/media/alex/DATA/Algoritmo y Estructura de Datos/3430A224_2023430003
+  373  cd ..
+  374  cd 3430A224_2023430003/
+  375  ls
+  376  ./lab8alexisHernandez.cpp 
+  377  cd
+  378  cd ./run
+  379  ls
+  380  cd ..
+  381  ls
+  382  man scrpy
+  383  man scrcpy
+  384  scrcpy 
+  385  scrcpy --help
+  386  scrcpy --otg
+  387  scrcpy --otg -f
+  388  scrcpy --help
+  389  scrcpy 
+  390  scrcpy --help
+  391  scrcpy 
+  392  scrcpy --otg -hid-keyboard
+  393  scrcpy --help
+  394  scrcpy -v
+  395  sudo snapd remove scrcpy
+  396  sudo snap remove scrcpy
+  397  sudo snap install scrcpy
+  398  scrcpy -v
+  399  scrcpy -g
+  400  scrcpy --g
+  401  sudo snap remove scrcpy
+  402  git clone https://github.com/Genymobile/scrcpy
+  403  cd scrcpy/
+  404  ./install_release.sh 
+  405  scrcpy
+  406  sudo dnf search scrcpy
+  407  ./install_release.sh 
+  408  cd scrcpy/
+  409  ./install_release.sh 
+  410  cd ..
+  411  rm -f scrcpy/
+  412  rm -help
+  413  rm --h
+  414  rm -f -r
+  415  ls
+  416  cd scrcpy/
+  417  ls
+  418  dnf copr enable zeno/scrcpy && dnf install scrcpy
+  419  sudo dnf copr enable zeno/scrcpy && dnf install scrcpy
+  420  su
+  421  su -h
+  422  su -P
+  423  sudo dnf copr enable zeno/scrcpy && dnf install scrcpy
+  424  supersu
+  425  sudo -i
+  426  scrcpy --otg
+  427  scrcpy -g
+  428  scrcpy --g
+  429  man scrcpy
+  430  scrcpy --gamepad
+  431  scrcpy --gamepad 1
+  432  scrcpy --gamepad
+  433  scrcpy -help
+  434  scrcpy -h
+  435  scrcpy --otg --keyboard=sdk --mouse=sdk
+  436  scrcpy --otg --keyboard=aoa --mouse=aoa
+  437  scrcpy
+  438  scrcpy --list-cameras
+  439  scrcpy --camera-id=1
+  440  scrcpy --video-source=camera --camera-id=1
+  441  scrcpy --video-source=camera --camera-id=2
+  442  scrcpy --video-source=camera --camera-id=0
+  443  scrcpy --video-source=camera --camera-id=1
+  444  scrcpy --video-source=camera --camera-id=2
+  445  scrcpy -h
+  446  clear
+  447  scrcpy -h
+  448  scrcpy --list-encoders 
+  449  scrcpy --video-source=camera --camera-id=1 --audio-source=output
+  450  scrcpy --video-source=camera --camera-id=1 
+  451  scrcpy --video-source=camera --camera-id=0
+  452  scrcpy 
+  453  g++ prueba_lab3_ej2.cpp 
+  454  g++ -o lab3 prueba_lab3_ej2.cpp 
+  455  g++ -o lab3 lab3_ej2.cpp 
+  456  ./lab3
+  457  man git
+  458  git checkout laboratorio3
+  459  git add AHERNANDEZlab3_ej2.cpp 
+  460  git commit -m "se eliminan los tildes, error de compilacion"
+  461  git push origin laboratorio3
+  462  git checkout laboratorio4
+  463  s
+  464  ls
+  465  git branch
+  466  git ls-tree -r laboratorio4  --name-only
+  467  g++ -o LAB4 AHernandez_Lab4.cpp 
+  468  ./LAB4 
+  469  ls
+  470  cat lab4
+  471  clear
+  472  cat Ahernandez_Lab4.cpp 
+  473  ls
+  474  git checkout laboratorio5
+  475  ls
+  476  cat AhernandezLab5.cpp 
+  477  sed -i 's/[áéíóú]/a/g;s/é/e/g;s/í/i/g;s/ó/o/g;s/ú/u/g' archivo.cpp
+  478  ls
+  479  sed -i 's/[áéíóú]/a/g;s/é/e/g;s/í/i/g;s/ó/o/g;s/ú/u/g' AhernandezLab5.cpp 
+  480  cat AhernandezLab5.cpp 
+  481  git add AhernandezLab5.cpp 
+  482  git commit -m "se eliminan las tildes por error de compilacion"
+  483  g++ -o lab5 AhernandezLab5.cpp 
+  484  git add AhernandezLab5.cpp 
+  485  git commit -m "se arregla orden de funciones"
+  486  git status
+  487  git push origin laboratorio5
+  488  cd ..
+  489  ls
+  490  cd ..
+  491  ls
+  492  cd run/media/alex/DATA/
+  493  cd Algoritmo\ y\ Estructura\ de\ Datos/
+  494  ls
+  495  cd 34
+  496  cd 3430A224_2023430003/
+  497  ls
+  498  git checkout laboratorio3
+  499  ls
+  500  ./lab3
+  501  git checkout --help
+  502  git checkout --ehlp
+  503  git checkout -b laboratorio9
+  504  git checkout laboratorio8
+  505  open lab8alexisHernandez.cpp 
+  506  kate lab8alexisHernandez.cpp 
+  507  cd ./
+  508  cd ./*
+  509  cd ./
+  510  cd ../../../../../
+  511  ../
+  512  cd ../
+  513  ls
+  514  cd home/alex/Lab_10/
+  515  ls --t
+  516  ls -t
+  517  ls 
+  518  cd ..
+  519  ls
+  520  cd Documentos/
+  521  mv Lab_10.zip ./home/alex
+  522  mv Lab_10.zip /home/alex
+  523  ls
+  524  cd ..
+  525  cd /home/alex/
+  526  ls
+  527  mkdir ayed_alexis
+  528  mv Lab_10.zip ayed_alexis/
+  529  cd ayed_alexis/
+  530  ls
+  531  zip -h
+  532  zip -h2
+  533  unzip Lab_10.zip 
+  534  ls
+  535  Lab_10/
+  536  cd Lab_10
+  537  cd ..
+  538  nautilus -h
+  539  nautilus Lab_10
+  540  ls
+  541  evince Laboratorio_10.pdf &
+  542  ls -h
+  543  ls --h
+  544  ls --help
+  545  ls --file-type 
+  546  cd Lab_10/
+  547  ls --file-type 
+  548  cd uniprot_info/
+  549  ls --file-type 
+  550  cd ..
+  551  find -name "*.txt"
+  552  cd uniprot_info/
+  553  ls
+  554  ls -a
+  555  cd ..
+  556  touch archivo_prueba.txt
+  557  ls
+  558  kate
+  559  geany 
+  560  kate 
+  561  nano archivo_prueba.txt 
+  562  cat archivo_prueba.txt 
+  563  find -name ".txt"
+  564  find -name "*.txt"
+  565  find -name "*G"
+  566  find -name "*.G"
+  567  ls *.txt
+  568  ls G*
+  569  ls G
+  570  ls G *
+  571  ls
+  572  ls G*
+  573  ls _A*
+  574  ls _A**
+  575  ls 
+  576  ls *_A*
+  577  find -name "*.G"
+  578  find -name "*.G*"
+  579  find -name "*G*"
+  580  mv HEM_A.pdb .HEM_A.pdb
+  581  ls
+  582  ls -a
+  583  mv .HEM_A.pdb HEM_A.pdb
+  584  ls --help
+  585  ls -lia
+  586  ls -l1a
+  587  ls -hl1a --si
+  588  ls -hl1 --si
+  589  ls -ltr
+  590  cd uniprot_info/
+  591  ls -a
+  592  cd ..
+  593  ls
+  594  cd ..
+  595  ls
+  596  cd Lab_10/uniprot_info/
+  597  ls
+  598  ls -a
+  599  cat --hlep
+  600  cat --help
+  601  grep --help
+  602  grep -c 10 HEM.txt 
+  603  cat HEM.txt 
+  604  head -n 10 HEM.txt 
+  605  clear
+  606  head -n 10 HEM.txt 
+  607  head -hrlp
+  608  head --help
+  609  head -t 10 HEM.txt 
+  610  head --lines=-10 HEM.txt 
+  611  clear
+  612  head --lines=[-]10 HEM.txt 
+  613  head --lines=-10 HEM.txt 
+  614  clear
+  615  grep -A 5 -B 5 "NUCLEOTIDE SEQUENCE" HEM.txt 
+  616  grep -A 3 -B 3 "NUCLEOTIDE SEQUENCE" HEM.txt 
+  617  clear
+  618  grep -A 3 -B 3 "NUCLEOTIDE SEQUENCE" HEM.txt 
+  619  grep --color "NUCLEOTIDE SEQUENCE" HEM.txt 
+  620  grep -A 1 -B 1 "NUCLEOTIDE SEQUENCE" HEM.txt 
+  621  grep -A 1 -B 2 "NUCLEOTIDE SEQUENCE" HEM.txt 
+  622  grep -B 5 "NUCLEOTIDE SEQUENCE" HEM.txt
+  623  grep -A 5 "NUCLEOTIDE SEQUENCE" HEM.txt
+  624  grep --color "NUCLEOTIDE SEQUENCE" HEM.txt 
+  625  grep --color "GO" HEM.txt 
+  626  grep --color "GO" *.txt 
+  627  ls
+  628  grep --color "GO" -a *.txt 
+  629  ls -a
+  630  grep --color "GO" ./.* 
+  631  grep --color "GO" ./* 
+  632  grep  "GO" ./.* 
+  633  grep  "GO" .* 
+  634  grep  "GO" * 
+  635  grep  "GO" *./* 
+  636  grep  "GO" *./ 
+  637  grep  "GO" ./ 
+  638  grep  "GO" 
+  639  grep  "GO" .* 
+  640  grep -help
+  641  grep --h
+  642  grep  "GO;" HEM.txt  
+  643  grep  "GO;" .*  
+  644  grep  "GO;" *
+  645  ls -lia
+  646  ls -l1a
+  647  mv .GFP.txt GFP.txt
+  648  mv .ACE2.txt ACE.txt
+  649  ls
+  650  ls -l1
+  651  mv .borrar.txt borrar.txt
+  652  ls
+  653  cat borrar.txt 
+  654  rm borrar.txt 
+  655  ls
+  656  cd ..
+  657  history 
+  658  history -help
+  659  history --help
+  660  history -w
+  661  cd ..
+  662  l
+  663  cd run/media/alex/DATA/Algoritmo\ y\ Estructura\ de\ Datos/3430A224_2023430003/
+  664  ls
+  665  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  666  ./prueba9
+  667  ./prueba9 5 l
+  668  ./prueba9
+  669  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  670  ./prueba9 5 l
+  671  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  672  ./prueba9 5 l
+  673  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  674  ./prueba9 5 c
+  675  git status
+  676  git add LAB9alexisHernandez.cpp 
+  677  git commit -m "se añade laboratorio 9 con mejoras"
+  678  git push origin laboratorio9
+  679  git rm AHERNANDEZlab3_ej2.cpp README.md 
+  680  git commit -m "se elimina archivos"
+  681  gt
+  682  git push origin laboratorio9
+  683  git rm AHernandez_Lab3_ejercicio1.cpp AHernandez_Lab3_ejercicio2.cpp
+  684  git commit -m "se elimina archivos"
+  685  git push origin laboratorio9
+  686  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  687  ./prueba9 5 c
+  688  ./prueba9 6 c
+  689  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  690  ./prueba9 6 c
+  691  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  692  ./prueba9 6 c
+  693  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  694  ./prueba9 6 c
+  695  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  696  ./prueba9 6 c
+  697  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  698  ./prueba9 6 c
+  699  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  700  ./prueba9 6 c
+  701  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  702  ./prueba9 6 c
+  703  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  704  ./prueba9 6 c
+  705  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  706  ./prueba9 6 c
+  707  ./prueba9 7 c
+  708  ./prueba9 8 c
+  709  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  710  ./prueba9 8 c
+  711  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  712  ./prueba9 8 c
+  713  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  714  ./prueba9 8 c
+  715  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  716  ./prueba9 8 c
+  717  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  718  ./prueba9 8 c
+  719  ./prueba9 7 c
+  720  ./prueba9 9 c
+  721  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  722  ./prueba9 9 c
+  723  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  724  ./prueba9 9 c
+  725  clea
+  726  clear
+  727  ./prueba9 9 c
+  728  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  729  ./prueba9 4 c
+  730  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  731  ./prueba9 4 c
+  732  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  733  ./prueba9 4 c
+  734  ./prueba9 10 c
+  735  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  736  ./prueba9 10 c
+  737  ./prueba9 9 c
+  738  ./prueba9 8 c
+  739  ./prueba9 9 c
+  740  git add LAB9alexisHernandez.cpp 
+  741  git commit -m "se mejora codigo en colisiones"
+  742  git push origin laboratorio9
+  743  ./prueba9 5 c
+  744  ./prueba9 4 c
+  745  ./prueba9 4 d
+  746  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  747  ./prueba9 4 c
+  748  ./prueba9 5 c
+  749  ./prueba9 5 d
+  750  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  751  ./prueba9 4 c
+  752  ./prueba9 5 c
+  753  ./prueba9 6 c
+  754  clear
+  755  ./prueba9 6 c
+  756  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  757  ./prueba9 6 c
+  758  ./prueba9 10 c
+  759  ./prueba9 10 d
+  760  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  761  ./prueba9 10 d
+  762  ./prueba9 5 d
+  763  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  764  ./prueba9 5 d
+  765  ./prueba9 5 d > salida.txt
+  766  less salida.txt 
+  767  ./prueba9 5 d > salida.txt
+  768  ./prueba9 5 d 
+  769  clear
+  770  ./prueba9 5 d 
+  771  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  772  ./prueba9 5 d 
+  773  ./prueba9 4 d 
+  774  g++ -o prueba9 LAB9alexisHernandez.cpp 
+  775  ./prueba9 4 d 
+  776  ./prueba9 4 c
+  777  cd 
+  778  ls
+  779  mkdir galaxy_assembling
+  780  cd ..
+  781  cd run/media/alex/DATA/Algoritmo\ y\ Estructura\ de\ Datos/3430A224_2023430003/
+  782  ls
+  783  g++ -o lab9 prueba9AlexisHernandez.cpp 
+  784  ./lab9 5 c
+  785  g++ -o lab9 prueba9AlexisHernandez.cpp 
+  786  ./lab9 5 c
+  787  g++ -o lab9 prueba9AlexisHernandez.cpp 
+  788  ./lab9 5 c
+  789  g++ -o lab9 prueba9AlexisHernandez.cpp 
+  790  ./lab9 5 c
+  791  ./lab9 7 c
+  792  ./lab9 7 d
+  793  g++ -o lab9 prueba9AlexisHernandez.cpp 
+  794  ./lab9 7 d
+  795  ./lab9 7 c
+  796  g++ -o lab9 prueba9AlexisHernandez.cpp 
+  797  ./lab9 7 c
+  798  ./lab9 7 d
+  799  ./lab9 19 d
+  800  ./lab9 19 a
+  801  ./lab9 19 l
+  802  git add prueba9AlexisHernandez.cpp 
+  803  git commit -m "se añade otro archivo de prueba, cambiando el metodo de codigo"
+  804  git push origin laboratorio9
+  805  git rm LAB9alexisHernandez.cpp 
+  806  git add LAB9alexisHernandez.cpp 
+  807  git rm LAB9alexisHernandez.cpp 
+  808  git commit -m "se actualiza codigo"
+  809  git push origin laboratorio9
+  810  git rm LAB9alexisHernandez.cpp 
+  811  git commit -m "eliminar codigo"
+  812  git push origin laboratorio9
+  813  scrpy
+  814  scrcpy
+  815  scrcpy --help
+  816  scrcpy --help | grep "video" -C 5
+  817  scrcpy --help | grep "camera" -C 5
+  818  scrcpy --list-cameras
+  819  scrcpy --video-source=camera-id=0
+  820  scrcpy --video-source=
+  821  scrcpy --video-source --camera-id=0
+  822  scrcpy --video-source=0
+  823  history | grep "scrcpy" -C 5 
+  824  scrcpy --video-source=camera --camera-id=0
+  825  scrcpy --video-source=camera --camera-id=1
+  826  scrcpy --video-source=camera --camera-id=2
+  827  scrcpy 
+  828  sudo snap search syncthing
+  829  sudo snap install syncthing
+  830  syncthing 
+  831  syncthing -help
+  832  clear
+  833  syncthing -help
+  834  syncthing 
+  835  scrcpy
+  836  mv SEMINARIO.odt ./SEMINARIO
+  837  cd SEMINARIO/
+  838  libreoffice SEMINARIO.odt
+  839  cp SEMINARIO.odt
+  840  cp SEMINARIO.odt SEMINARIO.docx
+  841  s
+  842  synthing 
+  843  syncthing 
+  844  open SEMINARIO_PRINCIPAL.pdf 
+  845  pdf SEMINARIO_PRINCIPAL.pdf 
+  846  okular
+  847  evince SEMINARIO_PRINCIPAL.pdf 
+  848  evince SEMINARIO_APOYO.pdf 
+  849  libreoffice SEMINARIO.docx 
+  850  rm SEMINARIO.odt
+  851  cd u
+  852  cd Lab_10/
+  853  cd uniprot_info/
+  854  ls
+  855  ls -li
+  856  cat historial_clase.txt 
+  857  cat GO_GFP.csv | wc -l
+  858  cat GO_GFP.csv | wc -L
+  859  man wc
+  860  ls
+  861  cd ..
+  862  ls
+  863  cd uniprot_info/
+  864  ls
+  865  mv ACE.txt ACE2.txt
+  866  mv GO_ACE.csv GO_ACE2.csv
+  867  ls
+  868  cat GO_ACE2.csv | wc -l
+  869  ls
+  870  cat concatenacion.csv | wc -l
+  871  history historial_clase.txt | grep concatenacion.csv 
+  872  history historial_clase.txt | grep "concatenacion" 
+  873  man history 
+  874  history historial_clase.txt -l | grep "concatenacion" 
+  875  cat historial_clase.txt  | grep "concatenacion" 
+  876  wc -c concatenacion.csv 
+  877  wc -w concatenacion.csv
+  878  wc -lcw concatenacion.csv
+  879  wc -lwc concatenacion.csv
+  880  awk "{print $1,$2,$3}" GO_GFP.csv 
+  881  awk '{print $1, $2, $3}' GO_GFP.csv 
+  882  awk '{print $1, $2, $3}' concatenacion.csv.csv 
+  883  awk '{print $1, $2, $3}' concatenacion.csv
+  884  clear
+  885  awk '{print $1, $2, $3}' concatenacion.csv
+  886  libreoffice concatenacion.csv 
+  887  awk 'begin={FS = ','}{print $1, $2, $3}' concatenacion.csv
+  888  awk 'BEGIN={FS = ','}{print $1, $2, $3}' concatenacion.csv
+  889  awk 'BEGIN = {FS = ','}{print $1, $2, $3}' concatenacion.csv
+  890  awk 'BEGIN {FS = ','}{print $1, $2, $3}' concatenacion.csv
+  891  awk 'BEGIN {FS = ';'}{print $1, $2, $3}' concatenacion.csv
+  892  awk '{print $1, $2, $3}' HEM.txt 
+  893  clear
+  894  awk '{print $1, $2, $3}' HEM.txt > awk_hem.txt
+  895  awk 'BEGIN {FS = ";"}{print $1, $2, $3}' concatenacion.csv
+  896  awk 'BEGIN {FS = ";"}{print $1, $2, $3}' HEM.txt 
+  897  awk 'BEGIN {FS = ";";OFS=","}{print $0}' HEM.txt 
+  898  awk 'BEGIN {FS = ";";OFS=","}{print $0}' GO_HEM.csv 
+  899  clear
+  900  awk 'BEGIN {FS = ";";OFS=","}{print $0}' GO_HEM.csv 
+  901  awk 'BEGIN {FS = ";";OFS=","}{print $1}' GO_HEM.csv 
+  902  awk 'BEGIN {FS = ";";OFS=","}{print $3}' GO_HEM.csv 
+  903  awk 'BEGIN {FS = ";";OFS=","}{print $1,$3}' GO_HEM.csv 
+  904  awk 'BEGIN {FS = ";";OFS=","}{print $2,$3}' GO_HEM.csv 
+  905  awk 'BEGIN {FS = ";";OFS=","}{print $1,$2,$3}' GO_HEM.csv > funciones_biologicas_HEM.csv
+  906  ls
+  907  libreoffice un
+  908  libreoffice funciones_biologicas_HEM.csv 
+  909  awk 'BEGIN {FS = ";";OFS=","}{print $3}' GO_HEM.csv > funciones_biologicas_HEM.csv
+  910  libreoffice funciones_biologicas_HEM.csv 
+  911  awk 'BEGIN {FS = ";";OFS=","}{print $3}' GO_GFP.csv > funciones_biologicas_GFP.csv
+  912  ls
+  913  awk 'BEGIN {FS = ";";OFS=","}{print $3}' GO_ACE2.csv > funciones_biologicas_ACE2.csv
+  914  cat *.csv > funciones_biologicas_all.csv
+  915  ls
+  916  libreoffice funciones_biologicas_all.csv 
+  917  libreoffice funciones_biologicas_GFP.csv.csv 
+  918  libreoffice funciones_biologicas_GFP.csv
+  919  libreoffice funciones_biologicas_ACE2.csv 
+  920  cd ..
+  921  ls
+  922  cp *.pdb Obtencion_AminoAcidos/
+  923  cp *.pdb obtencion_aminoaido
+  924  mkdir obtencion_Aminoacidos
+  925  cp *.pdb obtencion_Aminoacidos/
+  926  cd obtencion_Aminoacidos/
+  927  ls
+  928  cd *
+  929  cd .
+  930  cd ./
+  931  cd ~
+  932  ls
+  933  cd ..
+  934  cd snap
+  935  cd media
+  936  cd /
+  937  cd run/media/alex/DATA/Algoritmo\ y\ Estructura\ de\ Datos/
+  938  cd 3430A224_2023430003/
+  939  mkdir proyecto1_u3
+  940  ls
+  941  cd proyecto1_u3/
+  942  man libreoffice
+  943  libreoffice --math
+  944  libreoffice 
+  945  libreoffice --writer
+  946  mv proyecto_algoritmos.odt proyecto_algoritmos.docx
+  947  ls
+  948  libreoffice proyecto_algoritmos.docx 
+  949  cd ..
+  950  cd. .
+  951  cd ..
+  952  ls
+  953  cd run/media/alex/DATA/Descargas
+  954  ls -thl
+  955  ls -thl | grep -c ".pdf"
+  956  ls -thl | grep  ".pdf"
+  957  clear
+  958  ls -thl | grep  ".pdf"
+  959  cd ../..
+  960  cd .
+  961  cd *
+  962  cd ./
+  963  cd ..
+  964  cd .
+  965  cd ..
+  966  tree
+  967  clear
+  968  cd media
+  969  ls
+  970  cd ..
+  971  cd home/alex/ayed_alexis/
+  972  ls
+  973  cd Lab_10/
+  974  ls
+  975  view historial_rango.txt 
+  976  cat historial_clase.txt 
+  977  ls
+  978  cd uniprot_info/
+  979  ls
+  980  libreoffice GO_HEM.csv 
+  981  cat GO_HEM.csv | wc -L 
+  982  history
+  983  history | view
+  984  ls
+  985  history > historial_clase2.txt | view historial_clase2.txt 
+  986  man grep
+  987  ls
+  988  cd ..
+  989  ls
+  990  cd ..
+  991  ls
+  992  evince Laboratorio_10.pdf 
+  993  syncthing 
+  994  scrcpy
+  995  history scrcpy 
+  996  history | grep "scrcpy"
+  997  scrcpy --otg
+  998  scrcpy 
+  999  git branch
+ 1000  git clone git@github.com:Alex5625/Proyecto_Algoritmos.git
+ 1001  history > ola.txt
