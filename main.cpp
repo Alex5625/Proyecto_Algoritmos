@@ -10,7 +10,7 @@ using namespace std;
 int alineamiento(){
     
 }
-
+//ola
 
 int** generar_matriz_secuencias(string cad1, string cad2, int V){
     int fila = strlen(cad1);
@@ -32,8 +32,8 @@ int** generar_matriz_secuencias(string cad1, string cad2, int V){
         }
 
     }
- 
-     
+
+
 }
 
 int** generar_Funcion(string archivo){
