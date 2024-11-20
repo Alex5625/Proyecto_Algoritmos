@@ -2,73 +2,43 @@
 #include <fstream>
 #include <string>
 #include <cstring>
-
-
+#include <sstream>
+/* COMPILA BIEN PERO LA FUNCION generar_matriz_secuencias GENERA UNA MATRIZ
+4X4 Y NO 6X6 COMO ES EL LARGO DE LOS ARCHIVOS.*/
 using namespace std;
 
+/*
 // devuelve puntaje
 int alineamiento(){
     
 }
-//ola
+*/
 
-int** generar_matriz_secuencias(string cad1, string cad2, int V){
-    int fila = strlen(cad1);
-    int columnas = strlen(cad2);
+//POR MEJORAR hay que ver como se leen bien los archivos.tex
+int** generar_matriz_secuencias(const char* cad1, const char* cad2){
+    int columna = strlen(cad1);
+    int fila = strlen(cad2);
 
-    int** matriz = new int*[filas];
 
-    for (int i = 0; i < filas; i++){
-        matriz[i] = new int[columnas];
+    int** matriz = new int*[fila];
+    for (int i = 0; i < fila; ++i) {
+        matriz[i] = new int[columna];
     }
 
-    //rellenar la matriz con 9 pq es probable que te encuentres con 
+    //rellenar la matriz con 0
     int valor = 9;
 
-    for (int i = 0; i < filas; i++){
-        for (int j = 0; j < columnas; j++){
-            matriz[i][j] = valor
-
+    for (int i = 0; i < fila; i++){
+        for (int j = 0; j < columna; j++){
+            matriz[i][j] = valor;
         }
 
     }
 
-
+    return matriz;
 }
 
-int** generar_Funcion(string archivo){
-	
-	ifstream file(archivo); // archivo de puntajes
-	
-    int rows = 4, cols = 4; 
-
-    int** matrix = new int*[rows];
-    for (int i = 0; i < rows; ++i) {
-        matrix[i] = new int[cols];
-    }
-
-
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-                    
-            //SI NO SE PUEDE METER EL VALOR DE FILE EN I,J
-            if (!(file >> matrix[i][j])) { // Leer un valor
-                std::cerr << "Error al leer el archivo.\n";
-
-                // Liberar memoria en caso de error
-                for (int k = 0; k <= i; ++k) {
-                    delete[] matrix[k];
-                }
-                delete[] matrix;
-            }
-        }
-    }
-
-    file.close();
-	return matrix;
-}
-
-void imprimir_matriz(int similitud){
+void imprimir_matriz(int** matriz){
 	for (int i = 0; i < 4; ++i) {
 		for (int j = 0; j < 4; ++j) {
 			std::cout << matriz[i][j] << " ";
@@ -77,7 +47,39 @@ void imprimir_matriz(int similitud){
     }
 
 }
-//  0          1    2       3     4     5   6       7  8 
+
+int** generar_Funcion(string nombreArchivo){
+	
+	ifstream file(nombreArchivo); // archivo de puntajes
+
+    int fila = 4, columna = 4; 
+
+    int** matriz = new int*[fila];
+    for (int i = 0; i < fila; ++i) {
+        matriz[i] = new int[columna];
+    }
+    imprimir_matriz(matriz);
+    fila = 0;
+
+    string linea;
+
+    while(getline(file, linea) && fila < 4){
+        stringstream ss(linea);
+        string valor;
+        int columna = 0;
+
+        while(getline(ss, valor, ',') && columna < 4){
+            matriz[fila][columna] = stoi(valor);
+            columna++;
+        }
+        fila++;
+    }
+
+    file.close();
+	return matriz;
+}
+
+//  0          1    2       3     4     5   6       7  8
 //./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
 
 //  0              1            2             3        4
@@ -88,23 +90,23 @@ int main(int argc, char **argv) {
         return 1;
     }
 	
-	string cadena1;
+	string cadena_columna;
 	ifstream file1(argv[1]);
-    file1 >> cadena1;
+    file1 >> cadena_columna;
     file1.close();
+    const char* cadena1 = cadena_columna.c_str();
     
-    string cadena2;
+    string cadena_fila;
     ifstream file2(argv[2]);
-    file2 >> cadena2;
+    file2 >> cadena_fila;
     file2.close();
+    const char* cadena2 = cadena_fila.c_str();
     
     //MATRIZ DE EMPAREJAMIENTO
     int** similitud = generar_Funcion(argv[3]);
 	imprimir_matriz(similitud);
     
 
-    generar_matriz_secuencias()
+    int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
+    imprimir_matriz(matriz_secuencia);
 }
-
-
-
