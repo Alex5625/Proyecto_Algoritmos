@@ -9,12 +9,18 @@
 
 using namespace std;
 
-/*
+
 // devuelve puntaje
-int alineamiento(){
-    
+int alineamiento(int** puntuacion, int** matriz, int gap_score){
+    /*
+        recorrer matriz, revisar los valores de i,j:
+            Si i se esta moviendo y j = 0, se hace el gap * la posicion (i)
+            si i y j se estan moviendo se hace la puntuacion maxima de los 3 i-1 / j-1 / i-1 j-1
+                aqui dentro se recorre la matriz de puntuacion para revisar los puntajes y eso.
+            si i = 0 y j se esta moviendo se hace gap * la posicion (j)
+    */
 }
-*/
+
 
 
 void imprimir_matriz(int** matriz, int fila, int columna){
