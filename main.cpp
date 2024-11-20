@@ -4,7 +4,9 @@
 #include <cstring>
 #include <sstream>
 /* COMPILA BIEN PERO LA FUNCION generar_matriz_secuencias GENERA UNA MATRIZ
-4X4 Y NO 6X6 COMO ES EL LARGO DE LOS ARCHIVOS.*/
+4X4 Y NO 6X6 COMO ES EL LARGO DE LOS ARCHIVOS. (solucionado)*/
+
+
 using namespace std;
 
 /*
@@ -14,19 +16,31 @@ int alineamiento(){
 }
 */
 
+
+void imprimir_matriz(int** matriz, int fila, int columna){
+	for (int i = 0; i < fila; ++i) {
+		for (int j = 0; j < columna; ++j) {
+			std::cout << matriz[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+}
+
+
 //POR MEJORAR hay que ver como se leen bien los archivos.tex
 int** generar_matriz_secuencias(const char* cad1, const char* cad2){
-    int columna = strlen(cad1);
-    int fila = strlen(cad2);
+    int columna = strlen(cad1) + 1;
+    int fila = strlen(cad2) + 1;
 
 
     int** matriz = new int*[fila];
-    for (int i = 0; i < fila; ++i) {
+    for (int i = 0; i <= fila; ++i) {
         matriz[i] = new int[columna];
     }
 
     //rellenar la matriz con 0
-    int valor = 9;
+    int valor = 0;
 
     for (int i = 0; i < fila; i++){
         for (int j = 0; j < columna; j++){
@@ -34,19 +48,10 @@ int** generar_matriz_secuencias(const char* cad1, const char* cad2){
         }
 
     }
-
+    imprimir_matriz(matriz, fila, columna);
     return matriz;
 }
 
-void imprimir_matriz(int** matriz){
-	for (int i = 0; i < 4; ++i) {
-		for (int j = 0; j < 4; ++j) {
-			std::cout << matriz[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-}
 
 int** generar_Funcion(string nombreArchivo){
 	
@@ -58,7 +63,6 @@ int** generar_Funcion(string nombreArchivo){
     for (int i = 0; i < fila; ++i) {
         matriz[i] = new int[columna];
     }
-    imprimir_matriz(matriz);
     fila = 0;
 
     string linea;
@@ -78,6 +82,8 @@ int** generar_Funcion(string nombreArchivo){
     file.close();
 	return matriz;
 }
+
+
 
 //  0          1    2       3     4     5   6       7  8
 //./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
@@ -104,9 +110,10 @@ int main(int argc, char **argv) {
     
     //MATRIZ DE EMPAREJAMIENTO
     int** similitud = generar_Funcion(argv[3]);
-	imprimir_matriz(similitud);
+	imprimir_matriz(similitud,4,4);
     
 
     int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
-    imprimir_matriz(matriz_secuencia);
+
+    alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
 }
