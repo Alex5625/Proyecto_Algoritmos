@@ -133,8 +133,8 @@ int maximo(int a, int b, int c){ // uhh idk
 int** matrizAlineamiento(const char* cad1, const char* cad2,
                         int** matriz, int** matriz_puntajes,
                         int gap_score){
-    int columna = strlen(cad1)+1;
-    int fila = strlen(cad2)+1;
+    int columna = strlen(cad1);
+    int fila = strlen(cad2);
 
     for (int i = 0; i<=fila; i++){
         for (int j = 0;j<=columna;j++){
@@ -150,7 +150,8 @@ int** matrizAlineamiento(const char* cad1, const char* cad2,
                     matriz[i][j-1]+gap_score,
                     matriz[i-1][j-1]+valorPuntuacion(matriz_puntajes,cad2[i-1],cad1[j-1]));
             }
-            //cout << "Se asigna " << matriz[i][j] << endl;
+            cout << "Se asigna " << matriz[i][j] << " en " << cad1[i] <<
+             " y " << cad2[j] << " fila " << i << " columna " << j << endl;
         } 
     }    
 }
@@ -230,13 +231,13 @@ int main(int argc, char **argv) {
 	ifstream file1(argv[1]);
     file1 >> cadena_columna;
     file1.close();
-    const char* cadena1 = cadena_columna.c_str();
+    const char* cadena1 = cadena_columna.c_str() + '\0' ;
     
     string cadena_fila;
     ifstream file2(argv[2]);
     file2 >> cadena_fila;
     file2.close();
-    const char* cadena2 = cadena_fila.c_str();
+    const char* cadena2 = cadena_fila.c_str() + '\0' ;
     
     //MATRIZ DE EMPAREJAMIENTO
     int** similitud = generar_Funcion(argv[3]);
