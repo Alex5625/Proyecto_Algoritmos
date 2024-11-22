@@ -155,7 +155,9 @@ int** matrizAlineamiento(const char* cad1, const char* cad2,
             cout << "Se asigna " << matriz[i][j] << " en " << cad1[i] <<
              " y " << cad2[j] << " fila " << i << " columna " << j << endl;
         } 
-    }    
+    }
+    imprimir_alineamiento(matriz, cad1, cad2);
+    return matriz;    
 }
 
 
@@ -214,6 +216,16 @@ int** generar_Funcion(string nombreArchivo){
 	return matriz;
 }
 
+// Liberar memoria de la matriz
+void liberarMatriz(int** matriz, int filas) {
+	for (int i = 0; i < filas; ++i) {
+		delete[] matriz[i];
+	}
+	delete[] matriz;
+}
+
+
+
 
 //  0          1    2       3     4     5   6       7  8
 //./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
@@ -249,10 +261,15 @@ int main(int argc, char **argv) {
     int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
     imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
     
-    matrizAlineamiento(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
-    imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
+    int** matriz_rellena = matrizAlineamiento(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
+    //imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
+    
     // estoy probando aparte para organizarlo despues
     //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
     
-    puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
+    //puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
+
+    liberarMatriz(similitud,4); // Para matriz de puntuación
+	liberarMatriz(matriz_secuencia,cadena_fila.size() + 1); // Para la matriz basada en cadenas
+
 }
