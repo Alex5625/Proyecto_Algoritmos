@@ -132,7 +132,7 @@ int maximo(int a, int b, int c){ // uhh idk
     return max(a,max(b,c));
 }
 
-int** matrizAlineamiento(const char* cad1, const char* cad2,
+void matrizAlineamiento(const char* cad1, const char* cad2,
                         int** matriz, int** matriz_puntajes,
                         int gap_score){
     int columna = strlen(cad1);
@@ -157,7 +157,7 @@ int** matrizAlineamiento(const char* cad1, const char* cad2,
         } 
     }
     imprimir_alineamiento(matriz, cad1, cad2);
-    return matriz;    
+    
 }
 
 
@@ -261,15 +261,13 @@ int main(int argc, char **argv) {
     int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
     imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
     
-    int** matriz_rellena = matrizAlineamiento(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
-    //imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
+    matrizAlineamiento(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
+    imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
     
     // estoy probando aparte para organizarlo despues
     //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
     
-    //puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
+    puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
 
-    liberarMatriz(similitud,4); // Para matriz de puntuación
-	liberarMatriz(matriz_secuencia,cadena_fila.size() + 1); // Para la matriz basada en cadenas
 
 }
