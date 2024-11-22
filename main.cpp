@@ -30,33 +30,63 @@ void imprimir_matriz(int** matriz, int fila, int columna){
     }
 }
 
-int valorPuntuacion(char a, char b){
-    // usar con la matriz de puntuacion, ns como usarla
-    if (a==b){
-        return 2;
-    } else {
-        return -1;
-    };
+void imprimir_alineamiento(int** matriz, const char* cad1, const char* cad2){
+
+    int columna = strlen(cad1) + 1;
+    int fila = strlen(cad2) + 1;
+    for (int i=0;i<fila;++i){
+        cout << "  " << cad1[i];
+    }
+    cout << endl;
+
+	for (int i = 0; i < fila; ++i) {
+        cout << cad2[i-1] << "  ";
+		for (int j = 0; j < columna; ++j) {
+			std::cout << matriz[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int valorPuntuacion(int** matriz,char a, char b){
+    // char a pertenece a cad2 y char b pertenece a cad1
+    int i;
+    int j;
+
+    if(a == 'A'){
+        i = 0;
+    } else if (a=='G'){
+        i = 1;
+    } else if (a == 'C'){
+        i = 2;
+    } else if (a == 'T'){
+        i = 3;
+    }
+    
+    if(b == 'A'){
+        j = 0;
+    } else if (b=='G'){
+        j = 1;
+    } else if (b == 'C'){
+        j = 2;
+    } else if (b == 'T'){
+        j = 3;
+    }
+
+    return matriz[i][j];
 }
 
 // maximo para recorrer las secuencias
 int maximo(int a, int b, int c){ // uhh idk
-    if (a > b && a > c){
-        return a;
-    } else if (b>a && b > c){
-        return b;
-    } else if (c>a && c>b){
-        return c;
-    } else if (c > a && b == c){
-        return c; // valor sin gap
-    } else if (c > b && c == a){
-        return c;
-    }
+    return max(a,max(b,c));
 }
 
-int** draftMatrizAlineada(const char* cad1, const char* cad2, int** matriz, int gap_score){
-    int columna = strlen(cad1) + 1;
-    int fila = strlen(cad2) + 1;
+
+int** draftMatrizAlineada(const char* cad1, const char* cad2,
+                        int** matriz, int** matriz_puntajes,
+                        int gap_score){
+    int columna = strlen(cad1)+1;
+    int fila = strlen(cad2)+1;
 
     for (int i = 0; i<=fila; i++){
         for (int j = 0;j<=columna;j++){
@@ -70,11 +100,12 @@ int** draftMatrizAlineada(const char* cad1, const char* cad2, int** matriz, int 
                 matriz[i][j] = maximo(
                     matriz[i-1][j]+gap_score,
                     matriz[i][j-1]+gap_score,
-                    matriz[i][j]+valorPuntuacion(cad1[i],cad2[j]));
+                    matriz[i-1][j-1]+valorPuntuacion(matriz_puntajes,cad2[i-1],cad1[j-1]));
             }
+            cout << "Se asigna " << matriz[i][j] << endl;
         } 
     }    
-    imprimir_matriz(matriz,fila,columna);
+    imprimir_alineamiento(matriz,cad1,cad2);
 }
 
 
@@ -166,8 +197,9 @@ int main(int argc, char **argv) {
     
 
     int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
+    imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
     
-    draftMatrizAlineada(cadena1,cadena2,matriz_secuencia,stoi(argv[4]));
+    draftMatrizAlineada(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
     // estoy probando aparte para organizarlo despues
     //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
 }
