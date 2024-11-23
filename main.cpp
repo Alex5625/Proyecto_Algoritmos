@@ -25,34 +25,66 @@ string invertirCadena(const string& original){
 }
 
 void puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_score) {
-    int n = strlen(cad1);
-    int m = strlen(cad2);
+    int n = strlen(cad2);
+    int m = strlen(cad1); // ATENTI AQUI ns pq funciona bien
+    // se me hace que es pq va de atras para adelante y ahi se
+    // invierten los indices?????????
     int i = n;
     int j = m;
     string alineamientoS = "";
     string alineamientoT = "";
 
-    string cad1invertida = invertirCadena(string(cad1));
-    string cad2invertida = invertirCadena(string(cad2));
+    string cad1invertida = cad2;
+    string cad2invertida = cad1;
     // Realizar el traceback
-    while (i > 0 && j > 0) {
-        if (matriz[i][j] == matriz[i - 1][j] + gap_score) {
+    while (i > 0 || j > 0) {
+        cout << "PASADA: \n";
+        cout << "j: " << j << ", i: " << i << endl;
+        if (i>0 && j==0){
+            alineamientoS += cad1invertida[i];
+            alineamientoT += "-";
+            cout << "Caso 1 \n";
+            cout << "Se introduce " << cad1invertida[i] << " en cadena 1 porque " <<
+            j << " = 0 " << " y " << i << " > 0 " << endl;
+            i--;
+        } else if (i==0 && j>0){
+            alineamientoS += "-";
+            alineamientoT += cad2invertida[j];
+            cout << "Caso 2 \n";
+            cout << "Se introduce " << cad2invertida[j] << " en cadena 2 porque " <<
+            i << " = 0 " << " y " << j << " > 0 " << endl;
+            
+            j--;
+        }else if (j>0 && matriz[i][j] == matriz[i - 1][j] + gap_score) {
             // Gap en cadena 2
             alineamientoS += cad1invertida[i - 1];  // Agregar el carácter de cad1 al final
             alineamientoT += "-";  // Agregar un gap en la secuencia 2
+            cout << "Caso 3 \n";
+            cout << "Se introduce " << cad1invertida[i-1] << " en cadena 1 porque " <<
+            matriz[i][j] << " = " << matriz[i-1][j] << " + " << gap_score << endl;
             i--;
-        } else if (matriz[i][j] == matriz[i][j - 1] + gap_score) {
+
+        } else if (i>0 &&matriz[i][j] == matriz[i][j - 1] + gap_score) {
             // Gap en cadena 1
             alineamientoS += "-";  // Agregar un gap en cad1
             alineamientoT += cad2invertida[j - 1];  // Agregar el carácter de cad2
+            cout << "Caso 4 \n";
+            cout << "Se introduce " << cad2invertida[j-1] << " en cadena 2 porque " <<
+            matriz[i][j] << " = " << matriz[i][j-1] << " + " << gap_score << endl;
+
             j--;
         } else { 
             // Diagonal: match o mismatch
             alineamientoS += cad1invertida[i - 1];  // Agregar el carácter de cad1
             alineamientoT += cad2invertida[j - 1];  // Agregar el carácter de cad2
+            cout << "Caso 5\n";
+            cout << "Se introduce " << cad1invertida[i-1] <<
+            " en cadena 1 y " << cad2invertida[j-1] << " en cadena 2"<< endl;;
+            cout << "Valor i,j: " << matriz[i][j] << endl;
             i--;
             j--;
         }
+        
     }
 
     // Agregar gaps al final si las cadenas tienen longitudes diferentes
@@ -70,50 +102,10 @@ void puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_sco
     //alineamientoT = invertirCadena(alineamientoT);
 
     cout << "Resultado del alineamiento:\n";
-    cout << alineamientoS << endl << alineamientoT << endl;
-}
-
-/*
-
-void puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_score){
-    // recordar S es cad1 y T es cad2
-    int n = strlen(cad1);
-    int m = strlen(cad2);
-    int i = n;
-    int j = m;
-    string alineamientoS = "";
-    string alineamientoT = "";
-
-    while (i>0 || j>0){
-        if (i>0 && j==0){
-            alineamientoT += cad2[i-1];
-            alineamientoS += "-";
-            i=i-1;
-        } else if (i==0 && j>0){
-            alineamientoT += "-";
-            alineamientoS += cad1[j-1];
-            j=j-1;
-        } else if (i>0 && j>0 && matriz[i][j]==matriz[i-1][j]+gap_score){
-            alineamientoT +=cad2[i-1];
-            alineamientoS += "-";  
-            i=i-1;          
-        } else if (i>0 && j>0 && matriz[i][j]==matriz[i][j-1]+gap_score){
-            alineamientoT += "-";
-            alineamientoS += cad1[j-1];
-            j=j-1;
-        } else {
-            alineamientoT += cad2[i-1];
-            alineamientoS += cad1[j-1];
-            i=i-1;
-            j=j-1;
-        }
-    }
     alineamientoS = invertirCadena(alineamientoS);
     alineamientoT = invertirCadena(alineamientoT);
-    
-    cout << alineamientoS << endl << alineamientoT << endl;
+    cout << alineamientoT << endl << alineamientoS << endl;
 }
-*/
 
 void imprimir_matriz(int** matriz, int fila, int columna){
 	for (int i = 0; i < fila; ++i) {
@@ -278,19 +270,24 @@ int main(int argc, char **argv) {
         cout << "no añadiste los archivos.\n";
         return 1;
     }
-	
+	cout << "CONTROL 1\n";
+
 	string cadena_columna;
 	ifstream file1(argv[1]);
     file1 >> cadena_columna;
     file1.close();
-    const char* cadena1 = cadena_columna.c_str() + '\0' ;
-    
+    const char* cadena1 = cadena_columna.c_str();
+ 
+	cout << "CONTROL 2\n";
+
     string cadena_fila;
     ifstream file2(argv[2]);
     file2 >> cadena_fila;
     file2.close();
-    const char* cadena2 = cadena_fila.c_str() + '\0' ;
+    const char* cadena2 = cadena_fila.c_str();
     
+	cout << "CONTROL 3\n";
+
     //MATRIZ DE EMPAREJAMIENTO
     int** similitud = generar_Funcion(argv[3]);
 	//imprimir_matriz(similitud,4,4);
@@ -299,12 +296,14 @@ int main(int argc, char **argv) {
     int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
     //imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
     
+	cout << "CONTROL 4\n";
     matrizAlineamiento(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
-    //imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
+    imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
     
     // estoy probando aparte para organizarlo despues
     //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
-    
+
+	cout << "CONTROL 5\n";
     puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
 
 
