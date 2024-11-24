@@ -24,7 +24,7 @@ string invertirCadena(const string& original){
 
 }
 
-void puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_score) {
+string puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_score) {
     int n = strlen(cad2);
     int m = strlen(cad1); // ATENTI AQUI ns pq funciona bien
     // se me hace que es pq va de atras para adelante y ahi se
@@ -105,6 +105,8 @@ void puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_sco
     alineamientoS = invertirCadena(alineamientoS);
     alineamientoT = invertirCadena(alineamientoT);
     cout << alineamientoT << endl << alineamientoS << endl;
+    string archivo_secuencia = alineamientoT + "\n" + alineamientoS;
+    return archivo_secuencia;
 }
 
 void imprimir_matriz(int** matriz, int fila, int columna){
@@ -246,6 +248,22 @@ int** generar_Funcion(string nombreArchivo){
 	return matriz;
 }
 
+void volcar_archivo(const string& secuencia,const string& nombreArchivo ){
+
+    std::ofstream archivo(nombreArchivo);
+    if (archivo.is_open()) {
+        // Escritura en el archivo
+        archivo << secuencia;
+
+        // Cierre del archivo
+        archivo.close();
+        std::cout << "Archivo guardado exitosamente.\n";
+    } else {
+        std::cerr << "Error al abrir el archivo.\n";
+    }
+    
+}
+
 // Liberar memoria de la matriz
 void liberarMatriz(int** matriz, int filas) {
 	for (int i = 0; i < filas; ++i) {
@@ -304,7 +322,8 @@ int main(int argc, char **argv) {
     //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
 
 	cout << "CONTROL 5\n";
-    puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
 
-
+    string archivo = puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
+    
+    volcar_archivo(archivo, "sec_complete.txt");
 }
