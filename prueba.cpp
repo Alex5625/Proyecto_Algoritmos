@@ -375,5 +375,5 @@ int main(int argc, char **argv) {
     string archivo = puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
     
     volcar_archivo(archivo, "sec_complete.txt");
-    generar_dot(matriz_secuencia,cadena1,cadena2,"matriz_traceback.dot");
+    //generar_dot(matriz_secuencia,cadena1,cadena2,"matriz_traceback.dot");
 }
