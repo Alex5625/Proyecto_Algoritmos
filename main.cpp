@@ -303,8 +303,8 @@ void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cade
     }
 
     // Usar la longitud de las cadenas para determinar las dimensiones
-    int filas = cadena1.size() + 3;  // Número de filas
-    int columnas = cadena2.size()  - 1;  // Número de columnas
+    int filas = cadena1.size() ;  // Número de filas
+    int columnas = cadena2.size() ;  // Número de columnas
     //hay problemas cuando filas es mas grande que columnas
 
 
