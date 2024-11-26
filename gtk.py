@@ -54,7 +54,7 @@ class Gtk4TestTest(Gtk.ApplicationWindow):
             self.columnview.append_column(column)
 
         #Crear area para mostrar la imagen
-
+        #AUMENTAR TAMAÑO DE LA IMAGEN O BUSCAR LA MANERA EN LA QUE SE VEAN EN TAMAÑOS PARECIDOS
         self.imagen = Gtk.Image()
         self.cargar_imagen("imagen.png")
 
