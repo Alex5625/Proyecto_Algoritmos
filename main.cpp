@@ -4,6 +4,7 @@
 #include <cstring>
 #include <sstream>
 #include <iomanip> // para que la matriz se vea mas bonita
+#include <utility>
 /* COMPILA BIEN PERO LA FUNCION generar_matriz_secuencias GENERA UNA MATRIZ
 4X4 Y NO 6X6 COMO ES EL LARGO DE LOS ARCHIVOS. (solucionado)*/
 
@@ -25,7 +26,7 @@ string invertirCadena(const string& original){
 
 }
 
-string puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_score) {
+pair<string,string> puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_score) {
     int n = strlen(cad2);
     int m = strlen(cad1);
     // se asignan 
@@ -107,7 +108,8 @@ string puntajeMaximo(int** matriz, const char* cad1, const char* cad2, int gap_s
     cout << "Resultado del alineamiento:\n";
     cout << alineamientoT << endl << alineamientoS << endl;
     string archivo_secuencia = alineamientoT + "\n" + alineamientoS;
-    return archivo_secuencia;
+    
+    return make_pair(alineamientoT, alineamientoS);
 }
 
 void imprimir_matriz(int** matriz, int fila, int columna){
@@ -252,21 +254,75 @@ int** generar_Funcion(string nombreArchivo){
 	return matriz;
 }
 
-void volcar_archivo(const string& secuencia,const string& nombreArchivo ){
+// void volcar_archivo(int** matriz, const string& nombreArchivo ){
+//     int filas = 0;
+//     ofstream archivo(nombreArchivo);
+//     if (archivo.is_open()) {
 
-    std::ofstream archivo(nombreArchivo);
-    if (archivo.is_open()) {
-        // Escritura en el archivo
-        archivo << secuencia;
+//         while (matriz[filas] != nullptr) {
+//             ++filas;
+//         }
 
-        // Cierre del archivo
-        archivo.close();
-        std::cout << "Archivo guardado exitosamente.\n";
-    } else {
-        std::cerr << "Error al abrir el archivo.\n";
-    }
+//     // Usar la longitud de las cadenas para determinar las dimensiones
+//     int filas = cadena1.size() + 1;  // Número de filas
+//     int columnas = cadena2.size() + 1;  // Número de columnas
+
+//     // Escribir la matriz en formato CSV
+//     for (int i = 0; i < filas; ++i) {
+//         for (int j = 0; j < columnas; ++j) {
+//             archivo << matriz[i][j];
+//             if (j < columnas - 1)
+//                 archivo << ",";
+//         }
+//         archivo << "\n"; // Fin de la fila
+//     }
+
+
+//         }
+//         // Cierre del archivo
+//         archivo.close();
+//         std::cout << "Archivo guardado exitosamente.\n";
+//     } else {
+//         std::cerr << "Error al abrir el archivo.\n";
+//     }
     
+// }
+
+
+
+
+//violacion de segmento cuando cadena1 es mas grande que cadena2
+void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cadena2 , 
+                        const char* nombreArchivo) {
+
+    ofstream archivo(nombreArchivo);
+
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo para escribir.\n";
+        return;
+    }
+
+    // Usar la longitud de las cadenas para determinar las dimensiones
+    int filas = cadena1.size() + 3;  // Número de filas
+    int columnas = cadena2.size()  - 1;  // Número de columnas
+    //hay problemas cuando filas es mas grande que columnas
+
+
+    // Escribir la matriz en formato CSV
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            archivo << matriz[i][j];
+            if (j < columnas - 1)
+                archivo << ",";
+        }
+        archivo << "\n"; // Fin de la fila
+    }
+
+
+    archivo.close();
+    std::cout << "Archivo CSV creado exitosamente: " << nombreArchivo << "\n";
 }
+
 
 // Liberar memoria de la matriz
 void liberarMatriz(int** matriz, int filas) {
@@ -283,7 +339,7 @@ void liberarMatriz(int** matriz, int filas) {
 //./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
 
 //  0              1            2             3        4
-//./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
+//./programa -C1 cad1.tex (verticas) -C2 cad2.tex (horizontal) -U matriz.tex -V val
 
 //./programa cad.tex cad2.tex matriz.tex -1
 
@@ -320,7 +376,9 @@ int main(int argc, char **argv) {
     // estoy probando aparte para organizarlo despues
     //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
 
-    string archivo = puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
-    
-    volcar_archivo(archivo, "sec_complete.txt");
+    pair<string,string> alineamientos = puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
+    string alineamientoT = alineamientos.first;
+    string alineamientoS = alineamientos.second;
+
+    escribirCSVDinamico(matriz_secuencia, cadena_columna, cadena_fila, "matriz_gtk.csv");
 }
