@@ -332,7 +332,266 @@ void liberarMatriz(int** matriz, int filas) {
 	delete[] matriz;
 }
 
+void generarGrafoDOT2(const std::string &alineamientoS, const std::string &alineamientoT) {
 
+    int n = alineamientoS.size();
+    int m = alineamientoT.size();
+
+    // crear el archivo de salida
+    std::ofstream fp("alineamiento.txt");
+
+    // manejo errores
+    if (!fp.is_open()) {
+        std::cerr << "Error al abrir el archivo para escribir el grafo.\n";
+        return;
+    }
+
+    // escribir el grafo en formato DOT
+    fp << "graph bonito {\n";
+
+
+    fp << "rankdir=HR;\n";        // Orientación horizontal
+    fp << "splines=false;\n";     // Fuerza líneas completamente rectas
+    fp << "node [shape=circle];\n\n";
+
+    
+    //in beetween ----------------------------------------------------------------------------------------
+
+    int contador_gaps = 0;
+
+    
+    //cadena 1 - S
+    fp << "\n// Nodos para la primera cadena\n";
+
+    int contador_bases_S = 0;
+
+    for(int i = 0; i < n; i++){
+        contador_bases_S++;
+        fp << "S" << contador_bases_S << " [label = \"" << alineamientoS[i] << "\" ];\n";            
+    }
+
+
+    //cadena 2 - T
+    fp << "\n// Nodos para la segunda cadena\n";
+
+    int contador_bases_T = 0;
+
+    for(int j = 0; j < n; j++){
+        contador_bases_T++;
+        fp << "T" << contador_bases_T << " [label = \"" << alineamientoT[j] << "\" ];\n";            
+    }
+
+    //----------------------------------------------------------------------------------------------------
+    fp << "\n// Alineación horizontal por fila\n\n// cadena S\n";
+    //cadena 1 - S
+    string rank_s = "{rank=same; ";
+    int contador_gaps_2 = 0;
+    string gap_s = "";
+    int contador_bases_S2 = 0;
+
+    for(int i = 0; i < n; i++){
+
+        contador_bases_S2++;
+        string base_S = "S" + to_string(contador_bases_S2);
+
+        rank_s = rank_s + base_S + "; ";    
+
+    }
+    fp <<rank_s<<" }\n";
+
+
+    fp << "\n// cadena T\n";
+    //cadena 2 - T
+    string rank_t = "{rank=same; ";
+    //int contador_gapt_2 = 0;
+    string gap_t = "";
+    int contador_bases_T2 = 0;
+
+    for(int j = 0; j < n; j++){
+
+        contador_bases_T2++;
+        string base_T = "T" + to_string(contador_bases_T2);
+
+        rank_t = rank_t + base_T + "; ";    
+    
+        
+    }
+    fp <<rank_t<<" }\n";
+
+    //----------------------------------------------------------------------------------------------------
+    fp << "\n// Conexiones dentro de cada cadena\n\n";
+    
+    //cadena 1 - S
+    string conexion_s = "";
+    int contador_gaps_3 = 0;
+    string gap_s2 = "";
+    int contador_bases_S3 = 0;
+
+    for(int i = 0; i < n-1; i++){
+
+        contador_bases_S3++;
+        string base_S2 = "S" + to_string(contador_bases_S3);
+
+        conexion_s = conexion_s + base_S2 + " -- ";    
+
+    }
+
+    for(int i = n-1; i < n; i++){
+
+        contador_bases_S3++;
+        string base_S2 = "S" + to_string(contador_bases_S3);
+
+        conexion_s = conexion_s + base_S2 + ";";    
+
+        
+    }
+    fp <<conexion_s + "\n";
+    
+    // --------------------------------------------------------------- 
+    //cadena 2 - T
+    string conexion_t = "";
+    string gap_t2 = "";
+    int contador_bases_T3 = 0;
+
+    for(int i = 0; i < n-1; i++){
+
+        contador_bases_T3++;
+        string base_T2 = "T" + to_string(contador_bases_T3);
+
+        conexion_t = conexion_t + base_T2 + " -- ";    
+
+    }
+
+    for(int i = n-1; i < n; i++){
+
+        contador_bases_T3++;
+        string base_T2 = "T" + to_string(contador_bases_T3);
+
+        conexion_t = conexion_t + base_T2 + ";";    
+    
+        
+    }
+    fp <<conexion_t + "\n";
+
+    
+    //----------------------------------------------------------------------------------------------------
+    fp << "\n// Conexiones entre cadenas (si esque las letras coinciden)\n";
+    int kelly = 0;
+
+    for (int i = 0; i < n; i++) {
+
+        if(alineamientoS[i] == '-' || alineamientoT[i] == '-'){
+            //fp<<"";
+            string baseS = "S" + to_string(i + 1);
+            string baseT = "T" + to_string(i + 1);
+                                                //linea discontinua y negra
+            fp << baseS << " -- " << baseT << " [style=dashed, penwidth=3, color=black];\n";
+
+        }else{
+            kelly++;
+            //letras iguales
+            if (alineamientoS[i] == alineamientoT[i]) {
+                string baseS = "S" + to_string(i + 1);
+                string baseT = "T" + to_string(i + 1);
+                                                    //linea gruesa y azul
+                fp << baseS << " -- " << baseT << " [style=bold, color=blue];\n";
+            }else{
+            //letras diferentes
+                string baseS = "S" + to_string(i + 1);
+                string baseT = "T" + to_string(i + 1);
+                                                    //linea roja
+                fp << baseS << " -- " << baseT << " [style=bold, color=red];\n";
+            }
+        }
+
+
+        
+    }
+    
+
+    //in beetween ----------------------------------------------------------------------------------------
+
+    fp << "}\n";
+
+    fp.close();
+
+    std::cout << "\nArchivo 'alineamiento.txt' generado correctamente.\n";
+}
+/*
+void generarGrafoDOT(const std::string &alineamientoS, const std::string &alineamientoT) {
+    int n = alineamientoS.size();
+    int m = alineamientoT.size();
+    // Crear el archivo de salida
+    ofstream fp("alineamiento.dot");
+    if (!fp.is_open()) {
+        std::cerr << "Error al abrir el archivo para escribir el grafo.\n";
+        return;    
+    }
+    // Escribir el grafo en formato DOT
+    fp << "graph bonito {\n";
+    fp << " rankdir=LR;\n"; // Orientación: de izquierda a derecha
+    fp << " splines=false;\n"; // Líneas rectas
+    fp << " node [shape=circle];\n\n";
+    // Nodos de la cadena S
+    fp << "\n// Nodos para la cadena S\n";
+    for (int i = 0; i < n; ++i) {
+        if (alineamientoS[i] == '-') {
+            fp << " S " << (i + 1) << "[label=\"-\", shape=box, style=dashed, color=gray];\n";
+            // Cambia el color del nodo de gaps en S aquí
+        } else {
+            fp << " S" << (i + 1) << " [label=\"" << alineamientoS[i] << "\"];\n";
+        }
+    }
+    // Nodos de la cadena T
+    fp << "\n// Nodos para la cadena T\n";
+    for (int i = 0; i < m; ++i) {
+        if (alineamientoT[i] == '-') {
+            fp << " T" << (i + 1) << " [label=\"-\", shape=box, style=dashed, color=gray];\n";
+            // Cambia el color del nodo de gaps en T aquí
+        } else {
+        fp << " T" << (i + 1) << " [label=\"" << alineamientoT[i] << "\"];\n";
+    }
+    }
+    // Conexiones internas dentro de las cadenas S y T
+    fp << "\n// Conexiones internas en la cadena S\n";
+    for (int i = 1; i < n; ++i) {
+        fp << " S" << i << " -- S" << (i + 1) << ";\n"; // Puedes agregar estilo aquí si lo deseas
+    }
+    fp << "\n// Conexiones internas en la cadena T\n";
+    for (int i = 1; i < m; ++i) {
+        fp << " T" << i << " -- T" << (i + 1) << ";\n"; // Puedes agregar estilo aquí si lo deseas
+    }
+    // Conexiones entre cadenas S y T según la alineación
+    fp << "\n// Conexiones entre cadenas S y T\n";
+    for (int i = 0; i < n; ++i) {
+        string baseS = "S" + std::to_string(i + 1);
+        string baseT = "T" + std::to_string(i + 1);
+        if (alineamientoS[i] == alineamientoT[i]) {
+            // Letras coincidentes: línea azul y gruesa
+            fp << " " << baseS << " -- " << baseT
+            << " [style=bold, color=blue, penwidth=2];\n";
+            // Modifica color (blue) y grosor (penwidth=2) aquí para letras coincidentes
+        } else if (alineamientoS[i] == '-' || alineamientoT[i] == '-') {
+            // Gaps: línea negra discontinua
+            fp << " " << baseS << " -- " << baseT
+            << " [style=dashed, color=black, penwidth=1];\n";
+            // Modifica color (black) y estilo (dashed) aquí para gaps
+        } else {
+            // Letras diferentes: línea roja
+            fp << " " << baseS << " -- " << baseT
+            << " [style=bold, color=red, penwidth=2];\n";
+            // Modifica color (red) y grosor (penwidth=2) aquí para letras diferentes
+        }
+    }
+    // Cierre del grafo
+    fp << " label=\"Alineación de Secuencias: S y T\";\n"; // Título del grafo
+    fp << " labelloc=top;\n"; // Posición del título
+    fp << "}\n";
+    fp.close();
+    std::cout << "\nArchivo 'bonito.txt' generado correctamente.\n";
+    }
+
+*/
 
 
 //  0          1    2       3     4     5   6       7  8
@@ -381,4 +640,5 @@ int main(int argc, char **argv) {
     string alineamientoS = alineamientos.second;
 
     escribirCSVDinamico(matriz_secuencia, cadena_columna, cadena_fila, "matriz_gtk.csv");
+    generarGrafoDOT2(alineamientoT, alineamientoS);
 }
