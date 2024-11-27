@@ -201,7 +201,6 @@ void matrizAlineamiento(const char* cad1, const char* cad2,
 }
 
 
-//POR MEJORAR hay que ver como se leen bien los archivos.tex
 int** generar_matriz_secuencias(const char* cad1, const char* cad2){
     int columna = strlen(cad1) + 1;
     int fila = strlen(cad2) + 1;
@@ -285,9 +284,6 @@ int** generar_Funcion(string nombreArchivo){
     
 // }
 
-
-
-
 //violacion de segmento cuando cadena1 es mas grande que cadena2
 void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cadena2 , 
                         const char* nombreArchivo) {
@@ -303,7 +299,6 @@ void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cade
     int filas = cadena1.size() + 1 ;  // Número de filas
     int columnas = cadena2.size() + 1   ;  // Número de columnas
     //hay problemas cuando filas es mas grande que columnas
-
 
     // Escribir la matriz en formato CSV
     for (int i = 0; i < filas; ++i) {
@@ -329,6 +324,7 @@ void liberarMatriz(int** matriz, int filas) {
 	delete[] matriz;
 }
 
+// grafo de alineamiento
 void generarGrafoDOT2(const std::string &alineamientoS, const std::string &alineamientoT) {
 
     int n = alineamientoS.size();
@@ -466,7 +462,6 @@ void generarGrafoDOT2(const std::string &alineamientoS, const std::string &aline
 
         conexion_t = conexion_t + base_T2 + ";";    
     
-        
     }
     fp <<conexion_t + "\n";
 
@@ -499,12 +494,8 @@ void generarGrafoDOT2(const std::string &alineamientoS, const std::string &aline
                                                     //linea roja
                 fp << baseS << " -- " << baseT << " [style=bold, color=red];\n";
             }
-        }
-
-
-        
+        }        
     }
-    
 
     //in beetween ----------------------------------------------------------------------------------------
 
@@ -522,7 +513,7 @@ void abrirImagen() {
     
     //SI TU SISTEMA OPERATIVO NO POSEE GTK COMENTA ESTA FUNCION
     // cambiar python3 a py dependiendo del SO
-    system("py gtk.py &");
+    system("python3 gtk.py &");
     //-----------------------------------------------------------
 
     // Detectar el sistema operativo
@@ -564,27 +555,19 @@ void abrirImagen() {
     #endif
 }
 
-
 void comandos_sistema(){
-
     system("dot -Tpng alineamiento.txt -o archivo.png");
     abrirImagen();
 }
 
-//  0          1    2       3     4     5   6       7  8
-//./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
-
-//  0              1            2             3        4
-//./programa -C1 cad1.tex (verticas) -C2 cad2.tex (horizontal) -U matriz.tex -V val
-
-//./programa cad.tex cad2.tex matriz.tex -1
-
+//./programa cad1.tex cad2.tex matriz.csv -1
 int main(int argc, char **argv) {
     if (argc < 5) {
         cout << "Para ejecutar: \n" <<
         " ./programa cad1.tex cad2.tex matriz_gtk.csv gap_score\n" <<
-        "cad1 y cad2 contienen las cadenas de nucleotidos, " <<
-        "matriz_gtk.csv es donde se guarda la matriz. Gap_score es un entero\n";
+        "- cad1 y cad2 contienen las cadenas de nucleotidos, " <<
+        "- matriz_gtk.csv es donde se guarda la matriz para graficar\n. "<<
+        "- gap_score es un entero\n";
         return 1;
     }
 
@@ -600,12 +583,10 @@ int main(int argc, char **argv) {
     file2.close();
     const char* cadena2 = cadena_fila.c_str();
 
-
     //MATRIZ DE EMPAREJAMIENTO
     int** similitud = generar_Funcion(argv[3]);
 	//imprimir_matriz(similitud,4,4);
     
-
     int** matriz_secuencia = generar_matriz_secuencias(cadena1, cadena2);
     //imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
 
