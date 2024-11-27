@@ -29,8 +29,29 @@ class Gtk4TestTest(Gtk.ApplicationWindow):
 
         print(f"filas: {self.filas}")
         print(f"Columnas: {self.columnas}")
+
+        nueva_matriz = []
+
+        for i, fila in enumerate(self.matriz):
+            
+            if i != 0 and i < len(self.filas) + 2:
+                nombre_fila = f"{self.filas[i-1]}"
+            else:
+                nombre_fila = "-"
+
+            # if i == 1:
+            #     nombre_fila = "-"
+            # else:
+            #     if i < len(self.filas) + 2:
+            #         nombre_fila = f"{self.filas[i-1]}"
+            
+            nueva_fila = [nombre_fila] + fila
+            nueva_matriz.append(nueva_fila)
+
+        self.matriz = nueva_matriz
+
         # Agregar nombres a las filas como primera columna
-        self.matriz = [[f"{self.filas[i]}"] + fila for i, fila in enumerate(self.matriz)]
+        #self.matriz = [[f"{self.filas[i]}"] + fila for i, fila in enumerate(self.matriz)]
 
         # Crear el contenedor principal
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
@@ -71,9 +92,8 @@ class Gtk4TestTest(Gtk.ApplicationWindow):
         return matriz
 
     def crear_columnas(self, num_columnas, columnas):
-        """
-        Crea las columnas dinámicamente en el ColumnView.
-        """
+    #Crea las columnas dinámicamente en el ColumnView.
+    
         for i in range(num_columnas):
             factory = Gtk.SignalListItemFactory()
             factory.connect("setup", self.on_list_item_setup)
@@ -85,7 +105,9 @@ class Gtk4TestTest(Gtk.ApplicationWindow):
             elif i == 1:
                 column_title = "-"
             else:
-                columna_title = f"{self.columnas[i-1]}"
+                column_title = f"{self.columnas[i-2]}"
+
+            print(f"Columna {i}: {column_title}")  # Agregar un print para verificar los títulos
 
             column = Gtk.ColumnViewColumn(
                 title=column_title,
