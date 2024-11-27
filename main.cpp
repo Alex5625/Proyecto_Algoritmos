@@ -5,15 +5,11 @@
 #include <sstream>
 #include <iomanip> // para que la matriz se vea mas bonita
 #include <utility>
-#include <system>
-/* COMPILA BIEN PERO LA FUNCION generar_matriz_secuencias GENERA UNA MATRIZ
-4X4 Y NO 6X6 COMO ES EL LARGO DE LOS ARCHIVOS. (solucionado)*/
+#include <windows.h>
 
-/* -----------------------------------------------------------------------------------------------
-22/11/2024
-NO ES LA ALINEACION QUE PROPONE LOS ALGORITMOS, PROBLEMA DE PUNTUACION ??? ALINEACION???? IDK
---------------------------------------------------------------------------------------------------
-*/
+#ifdef _WIN32
+#endif
+
 using namespace std;
 
 
@@ -518,89 +514,19 @@ void generarGrafoDOT2(const std::string &alineamientoS, const std::string &aline
 
     std::cout << "\nArchivo 'alineamiento.txt' generado correctamente.\n";
 }
-/*
-void generarGrafoDOT(const std::string &alineamientoS, const std::string &alineamientoT) {
-    int n = alineamientoS.size();
-    int m = alineamientoT.size();
-    // Crear el archivo de salida
-    ofstream fp("alineamiento.dot");
-    if (!fp.is_open()) {
-        std::cerr << "Error al abrir el archivo para escribir el grafo.\n";
-        return;    
-    }
-    // Escribir el grafo en formato DOT
-    fp << "graph bonito {\n";
-    fp << " rankdir=LR;\n"; // Orientación: de izquierda a derecha
-    fp << " splines=false;\n"; // Líneas rectas
-    fp << " node [shape=circle];\n\n";
-    // Nodos de la cadena S
-    fp << "\n// Nodos para la cadena S\n";
-    for (int i = 0; i < n; ++i) {
-        if (alineamientoS[i] == '-') {
-            fp << " S " << (i + 1) << "[label=\"-\", shape=box, style=dashed, color=gray];\n";
-            // Cambia el color del nodo de gaps en S aquí
-        } else {
-            fp << " S" << (i + 1) << " [label=\"" << alineamientoS[i] << "\"];\n";
-        }
-    }
-    // Nodos de la cadena T
-    fp << "\n// Nodos para la cadena T\n";
-    for (int i = 0; i < m; ++i) {
-        if (alineamientoT[i] == '-') {
-            fp << " T" << (i + 1) << " [label=\"-\", shape=box, style=dashed, color=gray];\n";
-            // Cambia el color del nodo de gaps en T aquí
-        } else {
-        fp << " T" << (i + 1) << " [label=\"" << alineamientoT[i] << "\"];\n";
-    }
-    }
-    // Conexiones internas dentro de las cadenas S y T
-    fp << "\n// Conexiones internas en la cadena S\n";
-    for (int i = 1; i < n; ++i) {
-        fp << " S" << i << " -- S" << (i + 1) << ";\n"; // Puedes agregar estilo aquí si lo deseas
-    }
-    fp << "\n// Conexiones internas en la cadena T\n";
-    for (int i = 1; i < m; ++i) {
-        fp << " T" << i << " -- T" << (i + 1) << ";\n"; // Puedes agregar estilo aquí si lo deseas
-    }
-    // Conexiones entre cadenas S y T según la alineación
-    fp << "\n// Conexiones entre cadenas S y T\n";
-    for (int i = 0; i < n; ++i) {
-        string baseS = "S" + std::to_string(i + 1);
-        string baseT = "T" + std::to_string(i + 1);
-        if (alineamientoS[i] == alineamientoT[i]) {
-            // Letras coincidentes: línea azul y gruesa
-            fp << " " << baseS << " -- " << baseT
-            << " [style=bold, color=blue, penwidth=2];\n";
-            // Modifica color (blue) y grosor (penwidth=2) aquí para letras coincidentes
-        } else if (alineamientoS[i] == '-' || alineamientoT[i] == '-') {
-            // Gaps: línea negra discontinua
-            fp << " " << baseS << " -- " << baseT
-            << " [style=dashed, color=black, penwidth=1];\n";
-            // Modifica color (black) y estilo (dashed) aquí para gaps
-        } else {
-            // Letras diferentes: línea roja
-            fp << " " << baseS << " -- " << baseT
-            << " [style=bold, color=red, penwidth=2];\n";
-            // Modifica color (red) y grosor (penwidth=2) aquí para letras diferentes
-        }
-    }
-    // Cierre del grafo
-    fp << " label=\"Alineación de Secuencias: S y T\";\n"; // Título del grafo
-    fp << " labelloc=top;\n"; // Posición del título
-    fp << "}\n";
-    fp.close();
-    std::cout << "\nArchivo 'bonito.txt' generado correctamente.\n";
-    }
-
-*/
 
 
-#ifdef _WIN32
-#include <windows.h>
-#endif
 
 void abrirImagen() {
     const char* archivo_imagen = "archivo.png";
+    
+    
+    //SI TU SISTEMA OPERATIVO NO POSEE GTK COMENTA ESTA FUNCION
+    system("python3 gtk.py &");
+    //-----------------------------------------------------------
+
+
+
 
     // Detectar el sistema operativo
     #ifdef _WIN32
@@ -634,6 +560,8 @@ void abrirImagen() {
             std::cerr << "No se pudo detectar el entorno de escritorio. Usando 'xdg-open'." << std::endl;
             system(("xdg-open " + std::string(archivo_imagen)).c_str());  // Genérico
         }
+
+
     #else
         std::cerr << "Sistema operativo no soportado." << std::endl;
     #endif
@@ -642,17 +570,8 @@ void abrirImagen() {
 
 void comandos_sistema(){
 
-
-    /*
-        para crear la imagen desde el .dot debe ser de la manera
-            dot -Tpng alineamiento.txt -o archivo.png
-
-        para visualizar el gnome: eog archivo.png
-    */
-    system("dot -Tpng alineamiento.txt -o archivo.png")
+    system("dot -Tpng alineamiento.txt -o archivo.png");
     abrirImagen();
-    system("python3 gtk.py")
-
 }
 
 //  0          1    2       3     4     5   6       7  8
