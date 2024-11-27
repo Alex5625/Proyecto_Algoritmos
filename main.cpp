@@ -520,13 +520,10 @@ void generarGrafoDOT2(const std::string &alineamientoS, const std::string &aline
 void abrirImagen() {
     const char* archivo_imagen = "archivo.png";
     
-    
     //SI TU SISTEMA OPERATIVO NO POSEE GTK COMENTA ESTA FUNCION
-    system("python3 gtk.py &");
+    // cambiar python3 a py dependiendo del SO
+    system("py gtk.py &");
     //-----------------------------------------------------------
-
-
-
 
     // Detectar el sistema operativo
     #ifdef _WIN32
@@ -583,8 +580,11 @@ void comandos_sistema(){
 //./programa cad.tex cad2.tex matriz.tex -1
 
 int main(int argc, char **argv) {
-    if (argc < 3) {
-        cout << "no añadiste los archivos.\n";
+    if (argc < 5) {
+        cout << "Para ejecutar: \n" <<
+        " ./programa cad1.tex cad2.tex matriz_gtk.csv gap_score\n" <<
+        "cad1 y cad2 contienen las cadenas de nucleotidos, " <<
+        "matriz_gtk.csv es donde se guarda la matriz. Gap_score es un entero\n";
         return 1;
     }
 
@@ -611,9 +611,6 @@ int main(int argc, char **argv) {
 
     matrizAlineamiento(cadena1,cadena2,matriz_secuencia,similitud,stoi(argv[4]));
     imprimir_alineamiento(matriz_secuencia,cadena1,cadena2);
-    
-    // estoy probando aparte para organizarlo despues
-    //alineamiento(similitud, matriz_secuencia, stoi(argv[4]));
 
     pair<string,string> alineamientos = puntajeMaximo(matriz_secuencia,cadena1,cadena2,stoi(argv[4]));
     string alineamientoT = alineamientos.first;
