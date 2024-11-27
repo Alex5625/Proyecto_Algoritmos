@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iomanip> // para que la matriz se vea mas bonita
 #include <utility>
+#include <system>
 /* COMPILA BIEN PERO LA FUNCION generar_matriz_secuencias GENERA UNA MATRIZ
 4X4 Y NO 6X6 COMO ES EL LARGO DE LOS ARCHIVOS. (solucionado)*/
 
@@ -303,8 +304,8 @@ void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cade
     }
 
     // Usar la longitud de las cadenas para determinar las dimensiones
-    int filas = cadena1.size() ;  // Número de filas
-    int columnas = cadena2.size() ;  // Número de columnas
+    int filas = cadena1.size() + 1 ;  // Número de filas
+    int columnas = cadena2.size() + 1   ;  // Número de columnas
     //hay problemas cuando filas es mas grande que columnas
 
 
@@ -594,6 +595,66 @@ void generarGrafoDOT(const std::string &alineamientoS, const std::string &alinea
 */
 
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
+void abrirImagen() {
+    const char* archivo_imagen = "archivo.png";
+
+    // Detectar el sistema operativo
+    #ifdef _WIN32
+        // En Windows usamos start
+        system(("start " + std::string(archivo_imagen)).c_str());
+    #elif defined(__APPLE__) || defined(__MACH__)
+        // En macOS usamos el comando open
+        system(("open " + std::string(archivo_imagen)).c_str());
+    #elif defined(__linux__)
+        // En Linux, primero detectamos el entorno de escritorio
+        const char* entorno = std::getenv("XDG_CURRENT_DESKTOP");
+
+        if (entorno) {
+            if (strstr(entorno, "GNOME")) {
+                system(("eog " + std::string(archivo_imagen)).c_str());  // GNOME
+            }
+            else if (strstr(entorno, "KDE") || strstr(entorno, "Plasma")) {
+                system(("gwenview " + std::string(archivo_imagen)).c_str());  // KDE
+            }
+            else if (strstr(entorno, "XFCE")) {
+                system(("ristretto " + std::string(archivo_imagen)).c_str());  // XFCE
+            }
+            else if (strstr(entorno, "MATE")) {
+                system(("eom " + std::string(archivo_imagen)).c_str());  // MATE
+            }
+            else {
+                std::cerr << "Entorno desconocido: " << entorno << ". Usando 'xdg-open'." << std::endl;
+                system(("xdg-open " + std::string(archivo_imagen)).c_str());  // Genérico
+            }
+        } else {
+            std::cerr << "No se pudo detectar el entorno de escritorio. Usando 'xdg-open'." << std::endl;
+            system(("xdg-open " + std::string(archivo_imagen)).c_str());  // Genérico
+        }
+    #else
+        std::cerr << "Sistema operativo no soportado." << std::endl;
+    #endif
+}
+
+
+void comandos_sistema(){
+
+
+    /*
+        para crear la imagen desde el .dot debe ser de la manera
+            dot -Tpng alineamiento.txt -o archivo.png
+
+        para visualizar el gnome: eog archivo.png
+    */
+    system("dot -Tpng alineamiento.txt -o archivo.png")
+    abrirImagen();
+    system("python3 gtk.py")
+
+}
+
 //  0          1    2       3     4     5   6       7  8
 //./programa -C1 cad1.tex -C2 cad2.tex -U matriz.tex -V val
 
@@ -641,4 +702,5 @@ int main(int argc, char **argv) {
 
     escribirCSVDinamico(matriz_secuencia, cadena_columna, cadena_fila, "matriz_gtk.csv");
     generarGrafoDOT2(alineamientoT, alineamientoS);
+    comandos_sistema();
 }
