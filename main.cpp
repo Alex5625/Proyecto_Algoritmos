@@ -284,7 +284,6 @@ int** generar_Funcion(string nombreArchivo){
     
 // }
 
-//violacion de segmento cuando cadena1 es mas grande que cadena2
 void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cadena2 , 
                         const char* nombreArchivo) {
 
@@ -298,14 +297,14 @@ void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cade
     // Usar la longitud de las cadenas para determinar las dimensiones
     int filas = cadena1.size() + 1 ;  // Número de filas
     int columnas = cadena2.size() + 1   ;  // Número de columnas
-    //hay problemas cuando filas es mas grande que columnas
 
     // Escribir la matriz en formato CSV
-    for (int i = 0; i < filas; ++i) {
-        for (int j = 0; j < columnas; ++j) {
+    for (int i = 0; i < columnas; ++i) {
+        for (int j = 0; j < filas; ++j) {
             archivo << matriz[i][j];
-            if (j < columnas - 1)
+            if (j < columnas - 1){            
                 archivo << ",";
+            }
         }
         archivo << "\n"; // Fin de la fila
     }
