@@ -28,7 +28,7 @@ Este repositorio contiene una implementación en C++ para alinear dos secuencias
 2. **Ejecución**:
     Ejecútalo con los siguientes argumentos:
     ```bash
-    ./nombre_ejecutable -C1 cad1.tex -C2 cad2.tex -U martiz.csv -V valor_gap
+    ./nombre_ejecutable cad1.tex cad2.tex martiz.csv valor_gap
     ```
     Donde:
     - **`-C1`**: Archivo que contiene la primera secuencia.  
