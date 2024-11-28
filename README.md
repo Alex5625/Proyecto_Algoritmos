@@ -48,3 +48,4 @@ Este repositorio contiene una implementación en C++ para alinear dos secuencias
 ## Notas Importantes:
 - Esta implementacion funciona completamente en Linux. En Windows, si bien el alineamiento se ejecuta, la visualizacion grafica podria no funcionar correctamente debido a las dependencias de GTK.
 - Asegurate de que las secuencias de entrada tengan el formato adecuado.
+- **SI NO LOGRA ALINEAR BIEN DE LA MANERA ```cad1.tex cad2.tex```, INVIERTAN EL ORDEN DE LAS CADENAS DE TEXTO ```cad2.tex cad1.tex```.** 
