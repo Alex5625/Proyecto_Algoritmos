@@ -5,7 +5,7 @@
 #include <sstream>
 #include <iomanip> // para que la matriz se vea mas bonita
 #include <utility>
-#include <windows.h>
+
 
 #ifdef _WIN32
 #endif
@@ -250,39 +250,6 @@ int** generar_Funcion(string nombreArchivo){
 	return matriz;
 }
 
-// void volcar_archivo(int** matriz, const string& nombreArchivo ){
-//     int filas = 0;
-//     ofstream archivo(nombreArchivo);
-//     if (archivo.is_open()) {
-
-//         while (matriz[filas] != nullptr) {
-//             ++filas;
-//         }
-
-//     // Usar la longitud de las cadenas para determinar las dimensiones
-//     int filas = cadena1.size() + 1;  // Número de filas
-//     int columnas = cadena2.size() + 1;  // Número de columnas
-
-//     // Escribir la matriz en formato CSV
-//     for (int i = 0; i < filas; ++i) {
-//         for (int j = 0; j < columnas; ++j) {
-//             archivo << matriz[i][j];
-//             if (j < columnas - 1)
-//                 archivo << ",";
-//         }
-//         archivo << "\n"; // Fin de la fila
-//     }
-
-
-//         }
-//         // Cierre del archivo
-//         archivo.close();
-//         std::cout << "Archivo guardado exitosamente.\n";
-//     } else {
-//         std::cerr << "Error al abrir el archivo.\n";
-//     }
-    
-// }
 
 void escribirCSVDinamico(int** matriz, const string& cadena1, const string& cadena2 , 
                         const char* nombreArchivo) {
