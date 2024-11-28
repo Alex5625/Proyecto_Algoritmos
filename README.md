@@ -32,8 +32,8 @@ Este repositorio contiene una implementación en C++ para alinear dos secuencias
     ```
 3. **Visualización**:
     - El alineamiento se representará graficamente en dos formas:
-    1. **Ventana GTK**: Se muestra la matriz de puntuacion (solo para secuencias del mismo tamaño).
-    2. **Archivo PNG**: Se genera un archivo de imagen (formato PNG) en el directorio.
+        - **Ventana GTK**: Se muestra la matriz de puntuacion (solo para secuencias del mismo tamaño).
+        - **Archivo PNG**: Se genera un archivo de imagen (formato PNG) en el directorio.
 ## Dependencias
 - **Linux**:
     - GTK (para la visualizacion de la matriz de puntuacion)
