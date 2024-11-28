@@ -30,11 +30,6 @@ Este repositorio contiene una implementación en C++ para alinear dos secuencias
     ```bash
     ./nombre_ejecutable cad1.tex cad2.tex martiz.csv valor_gap
     ```
-    Donde:
-    - **`-C1`**: Archivo que contiene la primera secuencia.  
-    - **`-C2`**: Archivo que contiene la segunda secuencia.
-    - **`-U`**: Archivo de ingreso en formato CSV con la matriz de puntuacion.
-    - **`-V`**: Valor del gap (penalizacion por brechas).
 3. **Visualización**:
     - El alineamiento se representará graficamente en dos formas:
     1. **Ventana GTK**: Se muestra la matriz de puntuacion (solo para secuencias del mismo tamaño).
